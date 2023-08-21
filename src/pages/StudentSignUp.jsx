@@ -34,7 +34,7 @@ const StudentSignUp = () => {
             <section className='grid lg:grid-cols-2 lg:my-5 md:grid-cols-2 sm:grid-cols-1 justify-content-center align-items-center'>
                 <div className='grid p-4 '>
                 <h1 className='font-bold text-3xl'>SIGN UP</h1>
-                    <form action="" onSubmit={formik.handleSubmit} className='border-4 border-cyan-500 rounded-sm rounded-lg rounded-md grid lg:grid-cols-1 md:grid-cols-2 sm:grid-cols-1 w-96 p-2 my-2'>
+                    <form action="" onSubmit={formik.handleSubmit} className='border-4 border-cyan-500 rounded-xl grid lg:grid-cols-1 md:grid-cols-2 sm:grid-cols-1 w-96 p-2 my-2'>
                         <label htmlFor="Firstname">Firstname</label>
                         <input  type="text" className={formik.touched.firstname && formik.errors.firstname ? 'border-2 p-2 caret-red-400 rounded border-red-500': 'border-2 p-2 caret-cyan-400 rounded border-cyan-800'}  name='firstname' placeholder='firstname' onChange={formik.handleChange} onBlur={formik.handleBlur} />
                         <small className="text-red-500">{formik.touched.firstname && formik.errors.firstname}</small>

@@ -1,5 +1,5 @@
 import React from 'react'
-// import student from '../Images/students.gif'
+import 'animate.css';
 import indians from '../Images/indians.jpg'
 import Div from '../components/Div'
 
@@ -16,7 +16,7 @@ const Landing = () => {
                    <h1 style={myFont}  className='text-6xl lg:mt-9 font-bold text-center'>Education is the passport to the future, for tomorrow belongs to those who prepare for it today.</h1>
                 </div>
                 <div className='m-3'>
-                    <img className='rounded-lg' src={indians} alt="" />
+                    <img className='rounded-lg animate_animated animate__flash' src={indians} alt="" />
                 </div>
             </section>
             <section className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2'>
