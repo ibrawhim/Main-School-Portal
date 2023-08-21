@@ -23,7 +23,9 @@ const StudentSignUp = () => {
             firstname: Yup.string().required('Field is empty'),
             lastname: Yup.string().required('Field is empty'),
             email: Yup.string().required('Field is empty').email('Enter an email address'),
-            password: Yup.string().required('Field is empty')
+            password: Yup.string().required('Field is empty'),
+            phone:  Yup.number().typeError('Please enter a valid number').required('Field is empty'),
+            dob: Yup.date().required('date of birth is required')
         })
     })
   return (
