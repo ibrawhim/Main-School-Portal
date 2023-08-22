@@ -2,7 +2,7 @@ import React from 'react'
 import student from '../Images/students.gif'
 import { useFormik } from "formik";
 import * as Yup from 'yup'
-
+import {Link} from 'react-router-dom'
 
 
 
@@ -54,6 +54,10 @@ const StudentSignUp = () => {
                         <input type="text"  className={formik.touched.password && formik.errors.password ? 'border-2 p-2 caret-red-400 rounded border-red-500': 'border-2 p-2 caret-cyan-400 rounded border-cyan-800'}  name='password'  placeholder='password' onChange={formik.handleChange} onBlur={formik.handleBlur}/>
                         <small className="text-red-500">{formik.touched.password && formik.errors.password}</small>
                         <button type='submit' className='bg-cyan-800 my-2 p-1 text-white font-bold rounded'>Sign Up</button>
+                        <div className='flex justify-between'>
+                            <p>Have an Account?</p>
+                            <Link className='underline' to="/student/signin">Sign In Here</Link>
+                        </div>
                     </form>
                 </div>
                 <div>

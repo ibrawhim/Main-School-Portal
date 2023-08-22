@@ -6,7 +6,7 @@ import Error from "./pages/Error"
 import StudentSignUp from "./pages/StudentSignUp"
 import Studentsignin from "./pages/Studentsignin"
 
-function App() {
+function App() {0
 
 
   return (
