@@ -6,6 +6,7 @@ import Error from "./pages/Error"
 import StudentSignUp from "./pages/StudentSignUp"
 import Studentsignin from "./pages/Studentsignin"
 import StudentPortal from "./pages/StudentPortal"
+import SideBar from "./components/SideBar"
 
 function App() {0
 
@@ -19,6 +20,7 @@ function App() {0
         <Route path="/student/signup" element={<StudentSignUp/>}/>
         <Route path="/student/signin" element={<Studentsignin/>}/>
         <Route path="/student/portal" element={<StudentPortal/>}/>
+        <Route path="/side"  element={<SideBar/>}/>
       </Routes>
       <Footer/>
     </>
