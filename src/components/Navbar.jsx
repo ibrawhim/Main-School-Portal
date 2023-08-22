@@ -25,7 +25,7 @@ function Navbar() {
   return (
     <>
     <nav className="navbar text-white sm:ms-0 bg-cyan-800">
-      Menu<button className="toggle-button text-white  block md:hidden" onClick={toggleNavbar}>
+      <span className='font-bold'>UNIVERSITY</span><button className="toggle-button text-white  block md:hidden" onClick={toggleNavbar}>
         &#9776;
       </button>
       <ul className={`navbar-items ${isOpen ? 'active' : ''} sm:ps-3`}>
