@@ -6,7 +6,7 @@ import Error from "./pages/Error"
 import StudentSignUp from "./pages/StudentSignUp"
 import Studentsignin from "./pages/Studentsignin"
 import StudentPortal from "./pages/StudentPortal"
-import SideBar from "./components/SideBar"
+import SideBar from "./pages/StudentPortal"
 
 function App() {0
 

@@ -24,16 +24,16 @@ function Navbar() {
 
   return (
     <>
-    <nav className="navbar text-white sm:ms-0 bg-cyan-800">
+    <nav className="navbar text-white sm:ms-0 bg-cyan-800 sticky top-0">
       <span className='font-bold'>UNIVERSITY</span><button className="toggle-button text-white  block md:hidden" onClick={toggleNavbar}>
         &#9776;
       </button>
-      <ul className={`navbar-items ${isOpen ? 'active' : ''} sm:ps-3`}>
+      <ul className={`navbar-items ${isOpen ? 'active' : ''} sm:ps-3 bg-cyan-800 my-8`}>
         <div className='ms-5 sm:ms-3'><Link to="/">Home</Link></div>
         <div className='ms-5 sm:ms-3'><Link to="/student/portal">Dashboard</Link></div>
+        <div className='ms-5 sm:ms-3'><a href="#">Contact</a></div>
         <div className='ms-5 sm:ms-3' onMouseOver={showDropdown}><a href="#">Portal</a>
         </div>
-        <div className='ms-5 sm:ms-3'><a href="#">Contact</a></div>
       </ul>
     </nav>
       <div style={myPortal} className="dropdown-content hidden" onMouseOut={hideDropdown}>
