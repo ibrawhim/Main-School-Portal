@@ -11,6 +11,9 @@ import Main from "./pages/Main"
 import Profile from "./pages/Profile"
 import Pay from "./pages/Pay"
 import PayHistory from "./pages/PayHistory"
+import Course from "./pages/Course"
+import Notice from "./pages/Notice"
+import Help from "./pages/Help"
 
 
 function App() {
@@ -31,7 +34,9 @@ function App() {
         <Route path="/profile" element={<Profile/>}/>
         <Route path="/pay" element={<Pay/>}/>
         <Route path="/payhistory" element={<PayHistory/>}/>
-        <Route path="/payhistory" element={<PayHistory/>}/>
+        <Route path="/course" element={<Course/>}/>
+        <Route path="/notice" element={<Notice/>}/>
+        <Route path="/help" element={<Help/>}/>
       </Routes>
       <Footer/>
     </>

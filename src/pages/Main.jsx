@@ -22,7 +22,7 @@ const Main = () => {
                 <p className='text-white'>Name</p>
                 <p className='text-white'>image</p>
             </div>
-          <h1>Main page</h1>
+          <h1>Main page9</h1>
           <section>
             <div className='grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 mx-6 my-3 gap-1'>
             <Dashdiv id='Lorem ipsum dolor sit' level='level 1' style='shadow p-2'/>

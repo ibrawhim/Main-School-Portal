@@ -8,6 +8,9 @@ import Profile from './Profile'
 import Main from './Main'
 import Pay from './Pay'
 import PayHistory from './PayHistory'
+import Course from './Course'
+import Notice from './Notice'
+import Help from './Help'
 
 
 
@@ -15,7 +18,7 @@ import PayHistory from './PayHistory'
 const StudentPortal = () => {
     const hideSideBar = () => {
         document.querySelector('.sidebar').style.display = 'block';
-        document.querySelector('.sidebar').style.width = '100%';
+        // document.querySelector('.sidebar').style.width = '100%';
         document.querySelector('.content').style.display = 'none';
     }
     const hideSide = () => {
@@ -24,7 +27,9 @@ const StudentPortal = () => {
     }
     const dissapear = () => {
       document.querySelector('.content').style.display = 'none';
+      // document.querySelector('.sidebar').style.display = 'none';
     }
+    let sideBar = document.querySelector('.sidebar');
    
   return (
     <>
@@ -37,9 +42,9 @@ const StudentPortal = () => {
             <Link onClick={dissapear} to="/portal/profile" className="item">Profile</Link>
             <Link onClick={dissapear} to="/portal/pay" className="item">Pay Tuition</Link>
             <Link onClick={dissapear} to="/portal/payhistory" className="item">Payment History</Link>
-            <Link to="" className="item">Course Registration</Link>
-            <Link to="" className="item">Notice Board</Link>
-            <Link to="" className="item sm:text-black">About</Link>
+            <Link onClick={dissapear} to="/portal/course" className="item">Course Registration</Link>
+            <Link onClick={dissapear} to="/portal/notice" className="item">Notice Board</Link>
+            <Link onClick={dissapear} to="/portal/help" className="item sm:text-black">Help</Link>
             <Link to="" className="item">Log Out</Link>
           </nav>
         </aside>
@@ -81,9 +86,12 @@ const StudentPortal = () => {
 
         <Routes>
           <Route path='/dash' element={<Main/>}/>
-          <Route path='/profile' element={<Profile/>}/>
+          <Route path='/profile' element={<Profile sidebar={sideBar}/>}/>
           <Route path='/pay' element={<Pay/>}/>
           <Route path='/payhistory' element={<PayHistory/>}/>
+          <Route path='/course' element={<Course/>}/>
+          <Route path='/notice' element={<Notice/>}/>
+          <Route path="/help" element={<Help/>}/>
         </Routes>
       </div>
     </>
