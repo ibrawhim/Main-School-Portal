@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 import '../Navbar.css'; // Create a CSS file for stydivng
-import {Link} from 'react-router-dom'
+import {Link, useLocation} from 'react-router-dom'
+
 
 function Navbar() {
+  const location = useLocation()
   const [isOpen, setIsOpen] = useState(false);
+  const hiddenRoutes = ['/student/portal'];
+  const isHidden = hiddenRoutes.includes(location.pathname);
+
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
@@ -22,7 +27,7 @@ function Navbar() {
     right: '90px'
   }
 
-  return (
+  return isHidden ? null : (
     <>
     <nav className="navbar text-white sm:ms-0 bg-cyan-800 sticky top-0">
       <span className='font-bold'>UNIVERSITY</span><button className="toggle-button text-white  block md:hidden" onClick={toggleNavbar}>

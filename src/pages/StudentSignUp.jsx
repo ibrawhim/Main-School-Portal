@@ -3,10 +3,12 @@ import student from '../Images/students.gif'
 import { useFormik } from "formik";
 import * as Yup from 'yup'
 import {Link} from 'react-router-dom'
+import axios from 'axios'
 
 
 
 const StudentSignUp = () => {
+    let endpoint1 = 'http://localhost:4223/student/signup'
     let formik = useFormik({
         initialValues: {
             firstname: "",
@@ -18,6 +20,13 @@ const StudentSignUp = () => {
         },
         onSubmit: (values)=>{
             console.log(values);
+            axios.post(endpoint1,values)
+            .then((result)=>{
+                console.log(result);
+            })
+            .catch((errors)=>{
+                console.log(errors);
+            })
         },
         validationSchema: Yup.object({
             firstname: Yup.string().required('Field is empty'),

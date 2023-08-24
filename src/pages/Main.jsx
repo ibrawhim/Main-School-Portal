@@ -1,48 +1,21 @@
 import React from 'react'
 import '../Side.css'
-import {Link, Route, Routes} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import nav from '../Images/nav.png'
+// import x from '../Images/x.png'
 import close from '../Images/close.svg'
 import Dashdiv from '../components/Dashdiv'
-import Profile from './Profile'
-import Main from './Main'
-import Pay from './Pay'
-import PayHistory from './PayHistory'
 
 
-
-
-const StudentPortal = () => {
-    const hideSideBar = () => {
-        document.querySelector('.sidebar').style.display = 'block';
-        document.querySelector('.sidebar').style.width = '100%';
-        document.querySelector('.content').style.display = 'none';
-    }
-    const hideSide = () => {
-      document.querySelector('.sidebar').style.display = 'none';
-      document.querySelector('.content').style.display = 'block';
-    }
-    const dissapear = () => {
-      document.querySelector('.content').style.display = 'none';
-    }
-   
+const Main = () => {
+  const hideSideBar = () => {
+    document.querySelector('.sidebar').style.display = 'block';
+    document.querySelector('.sidebar').style.width = '100%';
+    document.querySelector('.content').style.display = 'none';
+}
   return (
     <>
-        <div className="app">
-        <aside id='sideBar' className="sidebar bg-cyan-800 border border-cyan-500 shadow-2xl sm:w-auto  hidden sm:block">
-          <span className='flex justify-between'><h3>menu</h3><button className='block md:hidden lg:hidden' onClick={hideSide}><img src={close} alt="" width={30}/></button></span>
-          <nav className="menu">
-            <Link to="/" className="item active">Home</Link>
-            <Link onClick={dissapear} to="/portal/dash" className="item">Dashboard</Link>
-            <Link onClick={dissapear} to="/portal/profile" className="item">Profile</Link>
-            <Link onClick={dissapear} to="/portal/pay" className="item">Pay Tuition</Link>
-            <Link onClick={dissapear} to="/portal/payhistory" className="item">Payment History</Link>
-            <Link to="" className="item">Course Registration</Link>
-            <Link to="" className="item">Notice Board</Link>
-            <Link to="" className="item sm:text-black">About</Link>
-            <Link to="" className="item">Log Out</Link>
-          </nav>
-        </aside>
+        
         <main className="content border border-cyan-500 p-0">
             <div className='bg-cyan-800 py-3 flex justify-between pe-3'>
             <button className='block md:hidden lg:hidden rounded  text-white' onClick={hideSideBar}><img className='text-white' src={nav} alt="" width={25}/></button>
@@ -78,16 +51,8 @@ const StudentPortal = () => {
             </div>
           </section>
         </main>
-
-        <Routes>
-          <Route path='/dash' element={<Main/>}/>
-          <Route path='/profile' element={<Profile/>}/>
-          <Route path='/pay' element={<Pay/>}/>
-          <Route path='/payhistory' element={<PayHistory/>}/>
-        </Routes>
-      </div>
     </>
   )
 }
 
-export default StudentPortal
+export default Main
