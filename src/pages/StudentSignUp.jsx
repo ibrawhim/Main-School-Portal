@@ -44,6 +44,7 @@ const StudentSignUp = () => {
             dob: Yup.date().required('date of birth is required')
         })
     })
+    
   return (
     <>
         <div className='lg:ps-5'>

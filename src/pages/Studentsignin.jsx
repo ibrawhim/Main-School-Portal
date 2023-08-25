@@ -1,24 +1,59 @@
 import React from 'react';
-// import fully from '../Images/fully.jpg'
 import photo from '../Images/photo.jpeg'
+import { Formik, useFormik } from 'formik';
+import * as Yup from 'yup'
+import axios from 'axios';
+import { Navigate, useNavigate } from 'react-router-dom';
+
+
 
 const Studentsignin = () => {
+    let navigate = useNavigate()
 
     let myDiv = {
         minWidth: '100vw',
         marginBottom: '10%',
         // height: '60vh',
     }
+    let url = 'http://localhost:4223/student/signin'
+
+    let formik = useFormik({
+        initialValues: {
+            email: '',
+            password: ''
+        },
+        onSubmit: (values)=> {
+            console.log(values);
+            axios.post(url,values)
+            .then((result)=>{
+                console.log(result);
+                if(result.data.status==true){
+                    navigate('/portal/dash')
+                }
+            })
+            .catch((error)=>{
+                console.log(error);
+            })
+        },
+        validationSchema: Yup.object({
+            email: Yup.string().required('Field is empty').email('Enter an email address'),
+            password: Yup.string().required('Field is empty'),
+        })
+
+    })
+    // console.log(formik.touched);
   return (
     <>
     <div style={myDiv} className='overflow-hidden'>
         <section className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 justify-center items-center '>
             <div className='grid justify-center mt-20'>
-                <form action="" className='flex flex-col w-96 shadow-2xl p-6 rounded-2xl'>
+                <form action="" onSubmit={formik.handleSubmit} className='flex flex-col w-96 shadow-2xl p-6 rounded-2xl'>
                 <h1 className='text-cyan-400'>SIGN IN</h1>
-                    <input type="text" placeholder='name@mail.com' className='border border-2 my-2 p-2 rounded border-cyan-400'/>
-                    <input type="text" placeholder='Password' className='border border-2 my-2 p-2 rounded border-cyan-400'/>
-                    <button className='bg-cyan-900 p-2 rounded text-white'>Sign In</button>
+                    <input type="text" placeholder='name@mail.com' className={formik.touched.email && formik.errors.email ? 'border-2 p-2 caret-red-400 rounded border-red-500': 'border-2 p-2 caret-cyan-400 rounded border-cyan-800 my-2'} name='email' onChange={formik.handleChange} onBlur={formik.handleBlur}/>
+                    <small className='text-red-500'>{formik.touched.email && formik.errors.email}</small>
+                    <input type="text" placeholder='Password' className={formik.touched.password && formik.errors.password ? 'border-2 p-2 caret-red-400 rounded border-red-500': 'border-2 p-2 caret-cyan-400 rounded border-cyan-800 my-2'} name='password' onChange={formik.handleChange} onBlur={formik.handleBlur}/>
+                    <small className='text-red-500'>{formik.touched.password && formik.errors.password}</small>
+                    <button type='submit' className='bg-cyan-900 p-2 rounded text-white'>Sign In</button>
                 </form>
             </div>
             <div className='me-10'>
