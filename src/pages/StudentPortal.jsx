@@ -26,8 +26,8 @@ const StudentPortal = () => {
       // document.querySelector('.content').style.display = 'block';
     }
     const dissapear = () => {
-      document.querySelector('.content').style.display = 'none';
-      // document.querySelector('.sidebar').style.display = 'none';
+      // document.querySelector('.content').style.display = 'none';
+      document.querySelector('.sidebar').style.display = 'none';
     }
     let sideBar = document.querySelector('.sidebar');
    

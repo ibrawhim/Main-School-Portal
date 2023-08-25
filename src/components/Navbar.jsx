@@ -35,7 +35,7 @@ function Navbar() {
       </button>
       <ul className={`navbar-items ${isOpen ? 'active' : ''} sm:ps-3 bg-cyan-800 my-8`}>
         <div className='ms-5 sm:ms-3'><Link to="/">Home</Link></div>
-        <div className='ms-5 sm:ms-3'><Link to="/portal/dashboard">Dashboard</Link></div>
+        <div className='ms-5 sm:ms-3'><Link to="/portal/dash">Dashboard</Link></div>
         <div className='ms-5 sm:ms-3'><a href="#">Contact</a></div>
         <div className='ms-5 sm:ms-3' onMouseOver={showDropdown}><a href="#">Portal</a>
         </div>

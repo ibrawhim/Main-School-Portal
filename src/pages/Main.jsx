@@ -17,11 +17,11 @@ const Main = () => {
     <>
         
         <main className="content border border-cyan-500 p-0">
-            <div className='bg-cyan-800 py-3 flex justify-between pe-3'>
+            {/* <div className='bg-cyan-800 py-3 flex justify-between pe-3'>
             <button className='block md:hidden lg:hidden rounded  text-white' onClick={hideSideBar}><img className='text-white' src={nav} alt="" width={25}/></button>
                 <p className='text-white'>Name</p>
                 <p className='text-white'>image</p>
-            </div>
+            </div> */}
           <h1>Main page9</h1>
           <section>
             <div className='grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 mx-6 my-3 gap-1'>
