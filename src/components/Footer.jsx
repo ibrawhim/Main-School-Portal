@@ -7,7 +7,7 @@ import React from 'react'
 const Footer = () => {
   return (
     <>
-        <footer className="flex flex-wrap justify-between align-center border-top bg-cyan-800">
+  <footer className="flex flex-wrap justify-between align-center border-top bg-cyan-800">
     <div className="col-md-4 d-flex align-items-center">
       <a href="/" className="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
         <svg className="bi" width="30" height="24"><use xlink:href="#bootstrap"/></svg>

@@ -23,7 +23,7 @@ const StudentPortal = () => {
     }
     const hideSide = () => {
       document.querySelector('.sidebar').style.display = 'none';
-      document.querySelector('.content').style.display = 'block';
+      // document.querySelector('.content').style.display = 'block';
     }
     const dissapear = () => {
       document.querySelector('.content').style.display = 'none';
@@ -33,6 +33,11 @@ const StudentPortal = () => {
    
   return (
     <>
+            <div className='bg-cyan-800 py-3 flex justify-between pe-3'>
+            <button className='block md:hidden lg:hidden rounded  text-white' onClick={hideSideBar}><img className='text-white' src={nav} alt="" width={25}/></button>
+                <p className='text-white'>Name</p>
+                <p className='text-white'>image</p>
+            </div>
         <div className="app">
         <aside id='sideBar' className="sidebar bg-cyan-800 border border-cyan-500 shadow-2xl sm:w-auto  hidden sm:block">
           <span className='flex justify-between'><h3>menu</h3><button className='block md:hidden lg:hidden' onClick={hideSide}><img src={close} alt="" width={30}/></button></span>
@@ -48,12 +53,7 @@ const StudentPortal = () => {
             <Link to="" className="item">Log Out</Link>
           </nav>
         </aside>
-        <main className="content border border-cyan-500 p-0">
-            <div className='bg-cyan-800 py-3 flex justify-between pe-3'>
-            <button className='block md:hidden lg:hidden rounded  text-white' onClick={hideSideBar}><img className='text-white' src={nav} alt="" width={25}/></button>
-                <p className='text-white'>Name</p>
-                <p className='text-white'>image</p>
-            </div>
+        {/* <main className="content border border-cyan-500 p-0">
           <h1>Main page</h1>
           <section>
             <div className='grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 mx-6 my-3 gap-1'>
@@ -82,7 +82,7 @@ const StudentPortal = () => {
               </div>
             </div>
           </section>
-        </main>
+        </main> */}
 
         <Routes>
           <Route path='/dash' element={<Main/>}/>
