@@ -6,7 +6,7 @@ import {Link, useLocation} from 'react-router-dom'
 function Navbar() {
   const location = useLocation()
   const [isOpen, setIsOpen] = useState(false);
-  const hiddenRoutes = ['/portal/','/portal','/portal/dash','/portal/profile','/portal/pay','/portal/course','/portal/payhistory','/portal/notice','/portal/help'];
+  const hiddenRoutes = ['/portal/','/portal','/portal/dash','/portal/profile','/congrat','/portal/pay','/portal/course','/portal/payhistory','/portal/notice','/portal/help'];
   const isHidden = hiddenRoutes.includes(location.pathname);
 
 

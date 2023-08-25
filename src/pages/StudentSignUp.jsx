@@ -2,12 +2,14 @@ import React from 'react'
 import student from '../Images/students.gif'
 import { useFormik } from "formik";
 import * as Yup from 'yup'
-import {Link} from 'react-router-dom'
+import {Link, Navigate, json, useNavigate} from 'react-router-dom'
 import axios from 'axios'
 
 
 
+
 const StudentSignUp = () => {
+    const navigate = useNavigate()
     let endpoint1 = 'http://localhost:4223/student/signup'
     let formik = useFormik({
         initialValues: {
@@ -23,6 +25,11 @@ const StudentSignUp = () => {
             axios.post(endpoint1,values)
             .then((result)=>{
                 console.log(result);
+                if (result){
+                    let resultData = (result.data)
+                    localStorage.setItem('myResult',JSON.stringify(resultData))
+                    navigate('/congrat')
+                }
             })
             .catch((errors)=>{
                 console.log(errors);

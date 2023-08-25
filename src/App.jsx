@@ -14,6 +14,7 @@ import PayHistory from "./pages/PayHistory"
 import Course from "./pages/Course"
 import Notice from "./pages/Notice"
 import Help from "./pages/Help"
+import Congratulation from "./pages/Congratulation"
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
         <Route path="/course" element={<Course/>}/>
         <Route path="/notice" element={<Notice/>}/>
         <Route path="/help" element={<Help/>}/>
+        <Route path="/congrat" element={<Congratulation/>}/>
       </Routes>
       <Footer/>
     </>

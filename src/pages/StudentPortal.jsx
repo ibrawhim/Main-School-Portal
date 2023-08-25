@@ -3,7 +3,6 @@ import '../Side.css'
 import {Link, Route, Routes} from 'react-router-dom'
 import nav from '../Images/nav.png'
 import close from '../Images/close.svg'
-import Dashdiv from '../components/Dashdiv'
 import Profile from './Profile'
 import Main from './Main'
 import Pay from './Pay'
@@ -18,7 +17,7 @@ import Help from './Help'
 const StudentPortal = () => {
     const hideSideBar = () => {
         document.querySelector('.sidebar').style.display = 'block';
-        document.querySelector('.content').style.display = 'none';
+        document.querySelector('.sidebar').style.zIndex = '2';
     }
     const hideSide = () => {
       document.querySelector('.sidebar').style.display = 'none';
@@ -32,8 +31,8 @@ const StudentPortal = () => {
     <>
             <div className='bg-cyan-800 py-3 flex justify-between pe-3'>
             <button className='block md:hidden lg:hidden rounded  text-white' onClick={hideSideBar}><img className='text-white' src={nav} alt="" width={25}/></button>
-                <p className='text-white'>Name</p>
-                <p className='text-white'>image</p>
+                <p className='text-black'>Name</p>
+                <p className='text-black'>image</p>
             </div>
         <div className="app">
         <aside id='sideBar' className="sidebar bg-cyan-800 border border-cyan-500 shadow-2xl sm:w-auto  hidden sm:block">
@@ -46,7 +45,7 @@ const StudentPortal = () => {
             <Link onClick={dissapear} to="/portal/payhistory" className="item">Payment History</Link>
             <Link onClick={dissapear} to="/portal/course" className="item">Course Registration</Link>
             <Link onClick={dissapear} to="/portal/notice" className="item">Notice Board</Link>
-            <Link onClick={dissapear} to="/portal/help" className="item sm:text-black">Help</Link>
+            <Link onClick={dissapear} to="/portal/help" className="item">Help</Link>
             <Link to="" className="item">Log Out</Link>
           </nav>
         </aside>
