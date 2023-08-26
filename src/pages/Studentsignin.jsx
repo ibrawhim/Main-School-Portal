@@ -10,10 +10,14 @@ import { Navigate, useNavigate } from 'react-router-dom';
 const Studentsignin = () => {
     let navigate = useNavigate()
 
+    // let mee =  `UNI2023${Math.round(Math.random()*10000)}`
+    // console.log(mee);
+
     let myDiv = {
         minWidth: '100vw',
-        marginBottom: '10%',
+        // marginBottom: '10%',
         // height: '60vh',
+        backgroundColor: '#e5e7eb'
     }
     let url = 'http://localhost:4223/student/signin'
 

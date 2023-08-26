@@ -18,13 +18,14 @@ const StudentSignUp = () => {
             email: "",
             password: "",
             phone: '',
-            dob: ''
+            dob: '',
+            matric: `UNI2023${Math.round(Math.random()*10000)}`
         },
         onSubmit: (values)=>{
-            console.log(values);
+            // console.log(values);
             axios.post(endpoint1,values)
             .then((result)=>{
-                console.log(result);
+                // console.log(result);
                 if (result){
                     let resultData = (result.data)
                     localStorage.setItem('myResult',JSON.stringify(resultData))
