@@ -1,18 +1,34 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../Side.css'
 import {Link} from 'react-router-dom'
 import nav from '../Images/nav.png'
 // import x from '../Images/x.png'
 import close from '../Images/close.svg'
 import Dashdiv from '../components/Dashdiv'
+import axios from 'axios'
+
 
 
 const Main = () => {
-  const hideSideBar = () => {
-    document.querySelector('.sidebar').style.display = 'block';
-    document.querySelector('.sidebar').style.width = '100%';
-    document.querySelector('.content').style.display = 'none';
-}
+//   const hideSideBar = () => {
+//     document.querySelector('.sidebar').style.display = 'block';
+//     document.querySelector('.sidebar').style.width = '100%';
+//     document.querySelector('.content').style.display = 'none';
+// }
+
+let endpoint = 'http://localhost:4223/student/portal'
+
+
+useEffect(() => {
+ axios.get(endpoint)
+ .then((result)=>{
+  console.log(result);
+ })
+ .catch((error)=>{
+  console.log(error);
+ })
+}, [])
+
   return (
     <>
         

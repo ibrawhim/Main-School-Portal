@@ -27,11 +27,14 @@ const Studentsignin = () => {
             password: ''
         },
         onSubmit: (values)=> {
-            console.log(values);
+            // console.log(values);
             axios.post(url,values)
-            .then((result)=>{
-                console.log(result);
-                if(result.data.status==true){
+            .then((response)=>{
+                // console.log(result);
+                if(!response.data.status){
+                    console.log(response.data.message);
+                }else {
+                    localStorage.token = response.data.token
                     navigate('/portal/dash')
                 }
             })
@@ -49,7 +52,7 @@ const Studentsignin = () => {
   return (
     <>
     <div style={myDiv} className='overflow-hidden'>
-        <section className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 justify-center items-center '>
+        <section className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 justify-center items-center border border-red-900'>
             <div className='grid justify-center mt-20'>
                 <form action="" onSubmit={formik.handleSubmit} className='flex flex-col w-96 shadow-2xl p-6 rounded-2xl'>
                 <h1 className='text-cyan-400'>SIGN IN</h1>
@@ -61,7 +64,7 @@ const Studentsignin = () => {
                 </form>
             </div>
             <div className='me-10'>
-                <img src={photo} className='rounded-2xl m-4 sm:m-2 md:m-8 lg:m-6 xl:m-10' alt=""/>
+                <img src={photo} className='rounded-2xl m-4 sm:m-2 md:m-8  lg:mx-6 xl:m-10' alt=""/>
             </div>
         </section>
     </div>
