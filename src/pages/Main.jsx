@@ -1,11 +1,13 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../Side.css'
-import {Link} from 'react-router-dom'
+import {Link, Navigate, useNavigate} from 'react-router-dom'
 import nav from '../Images/nav.png'
 // import x from '../Images/x.png'
 import close from '../Images/close.svg'
 import Dashdiv from '../components/Dashdiv'
 import axios from 'axios'
+
+
 
 
 
@@ -15,14 +17,30 @@ const Main = () => {
 //     document.querySelector('.sidebar').style.width = '100%';
 //     document.querySelector('.content').style.display = 'none';
 // }
-
+const [matricno, setmatricno] = useState("")
+const [first, setfirst] = useState("")
+const [last, setlast] = useState("")
 let endpoint = 'http://localhost:4223/student/portal'
-
+let token = localStorage.token
+let navigate = useNavigate()
 
 useEffect(() => {
- axios.get(endpoint)
- .then((result)=>{
-  console.log(result);
+ axios.get(endpoint,{
+    headers: {
+       "Authorization": `Bearer ${token}`,
+       "Content-type": 'application/json',
+       "Accept": 'application/json'
+    }
+ })
+ .then((response)=>{
+  if(!response.data.status){
+    navigate('/student/signin')
+  } else {
+    setmatricno(response.data.response.matric);
+    setfirst(response.data.response.firstname);
+    setlast(response.data.response.lastname)
+  }
+  
  })
  .catch((error)=>{
   console.log(error);
@@ -33,11 +51,11 @@ useEffect(() => {
     <>
         
         <main className="content border border-cyan-500 p-0">
-          <h1>Main page</h1>
+          <h1 className='text-xl font-bold'>Welcome {first} {last}</h1>
           <section>
             <div className='grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 mx-6 my-3 gap-1'>
-            <Dashdiv id='Lorem ipsum dolor sit' level='level 1' style='shadow p-2'/>
-            <Dashdiv id='sit amet consectetur adipisicing' level='level 2' style='shadow p-2'/>
+            <Dashdiv id='Matric No:' level='level 1' style='shadow p-2 font-semibold' mat={matricno}/>
+            <Dashdiv id='Firstname:' level='level 2' style='shadow p-2' mat={first}/>
             <Dashdiv id='Fugiat voluptate, dolores' level='level 3' style='shadow p-2'/>
             <Dashdiv id='dolores accusamus dolore quae' level='level 4' style='shadow p-2'/>
             <Dashdiv id='Lorem ipsum dolor sit' level='level 5' style='shadow p-2'/>

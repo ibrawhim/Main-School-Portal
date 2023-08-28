@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Dashdiv = ({id,level,style}) => {
+const Dashdiv = ({id,level,style,mat,firstn}) => {
   return (
     <>
     <div>
@@ -9,7 +9,7 @@ const Dashdiv = ({id,level,style}) => {
                 <img src="" alt="" />
                 <p>{level}</p>
             </div>
-            <p>{id}</p>
+            <p>{id} {mat}</p>
         </div>
     </div>
     </>
