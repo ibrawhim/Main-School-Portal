@@ -19,7 +19,8 @@ const Studentsignin = () => {
         // height: '60vh',
         backgroundColor: '#e5e7eb'
     }
-    let url = 'http://localhost:4223/student/signin'
+    // let url = 'http://localhost:4223/student/signin'
+    let url = 'https://school-portal-back.vercel.app/student/signup'
 
     let formik = useFormik({
         initialValues: {
