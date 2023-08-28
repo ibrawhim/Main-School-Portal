@@ -12,11 +12,11 @@ import axios from 'axios'
 
 
 const Main = () => {
-//   const hideSideBar = () => {
-//     document.querySelector('.sidebar').style.display = 'block';
-//     document.querySelector('.sidebar').style.width = '100%';
-//     document.querySelector('.content').style.display = 'none';
-// }
+  const hideSideBar = () => {
+    document.querySelector('.sidebar').style.display = 'block';
+    document.querySelector('.sidebar').style.width = '100%';
+    document.querySelector('.content').style.display = 'none';
+}
 const [matricno, setmatricno] = useState("")
 const [first, setfirst] = useState("")
 const [last, setlast] = useState("")

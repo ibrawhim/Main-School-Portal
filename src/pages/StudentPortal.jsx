@@ -23,7 +23,7 @@ const StudentPortal = () => {
       document.querySelector('.sidebar').style.display = 'none';
     }
     const dissapear = () => {
-      document.querySelector('.sidebar').style.display = 'none';
+      document.querySelector('.sidebar').style.display = 'block';
     }
     let sideBar = document.querySelector('.sidebar');
    
