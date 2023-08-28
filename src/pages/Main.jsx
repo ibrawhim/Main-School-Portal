@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import '../Side.css'
 import {Link, Navigate, useNavigate} from 'react-router-dom'
-import nav from '../Images/nav.png'
+// import nav from '../Images/nav.png'
 // import x from '../Images/x.png'
-import close from '../Images/close.svg'
+// import close from '../Images/close.svg'
 import Dashdiv from '../components/Dashdiv'
 import axios from 'axios'
+import {FaUserGraduate} from 'react-icons/fa'
+import {FaGraduationCap} from 'react-icons/fa'
 
 
 
@@ -54,8 +56,8 @@ useEffect(() => {
           <h1 className='text-xl font-bold'>Welcome {first} {last}</h1>
           <section>
             <div className='grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 mx-6 my-3 gap-1'>
-            <Dashdiv id='Matric No:' level='level 1' style='shadow p-2 font-semibold' mat={matricno}/>
-            <Dashdiv id='Firstname:' level='level 2' style='shadow p-2' mat={first}/>
+            <Dashdiv id='Matric No:' style='shadow p-2 font-semibold' mat={matricno} img={<FaUserGraduate/>}/>
+            <Dashdiv id='Semester'  style='shadow p-2' mat='Second' img={<FaGraduationCap/>}/>
             <Dashdiv id='Fugiat voluptate, dolores' level='level 3' style='shadow p-2'/>
             <Dashdiv id='dolores accusamus dolore quae' level='level 4' style='shadow p-2'/>
             <Dashdiv id='Lorem ipsum dolor sit' level='level 5' style='shadow p-2'/>

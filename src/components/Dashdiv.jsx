@@ -1,15 +1,26 @@
 import React from 'react'
 
-const Dashdiv = ({id,level,style,mat,firstn}) => {
+
+const Dashdiv = ({id,level,style,mat,img}) => {
+  let inDiv = {
+    borderBottom: '1px solid',
+    padding: '2px',
+    display: 'flex',
+    justifyContent: 'space-between'
+  }
   return (
+    
     <>
     <div>
         <div className={style}>
-            <div>
-                <img src="" alt="" />
-                <p>{level}</p>
+            <div style={inDiv}>
+                {img}
+                {level}
             </div>
-            <p>{id} {mat}</p>
+            <div className='flex justify-between'>
+                <p>{id}</p>
+                <p>{mat}</p>
+            </div>
         </div>
     </div>
     </>
