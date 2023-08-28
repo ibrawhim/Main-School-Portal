@@ -10,7 +10,7 @@ const Profile = (sidebar) => {
 // }
   return (
     <>
-      <main className="content grid border border-cyan-500 p-0">
+      <main className="content grid border border-cyan-500 bg-slate-200 p-0">
             {/* <div className='bg-cyan-800 py-3 mb-0 flex justify-between pe-3 h-12'>
             <button className='block md:hidden lg:hidden rounded  text-white' onClick={hideSideBar}><img className='text-white' src={nav} alt="" width={25}/></button>
                 <p className='text-white'>Name</p>

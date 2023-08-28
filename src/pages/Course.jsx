@@ -12,7 +12,7 @@ const Course = () => {
 }
   return (
     <>
-      <main className="content grid border border-cyan-500 p-0">
+      <main className="content grid border border-cyan-500 bg-slate-200 p-0">
             <h1 className='font-bold text-cyan-800'>COURSE REGISTRATION</h1>
             <div className='border w-1/2 grid bg-cyan-800 mb-96'>
                 <select name="" id="" className='bg-cyan-800 text-white  shadow-xl'>

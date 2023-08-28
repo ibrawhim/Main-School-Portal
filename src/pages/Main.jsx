@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import '../Side.css'
 import {Link, Navigate, useNavigate} from 'react-router-dom'
-// import nav from '../Images/nav.png'
-// import x from '../Images/x.png'
-// import close from '../Images/close.svg'
 import Dashdiv from '../components/Dashdiv'
 import axios from 'axios'
 import {FaUserGraduate} from 'react-icons/fa'
 import {FaGraduationCap} from 'react-icons/fa'
+import {BiLineChart} from 'react-icons/bi'
+import {FaBookOpen} from 'react-icons/fa'
+
 
 
 
@@ -22,6 +22,7 @@ const Main = () => {
 const [matricno, setmatricno] = useState("")
 const [first, setfirst] = useState("")
 const [last, setlast] = useState("")
+
 let endpoint = 'http://localhost:4223/student/portal'
 let token = localStorage.token
 let navigate = useNavigate()
@@ -52,14 +53,14 @@ useEffect(() => {
   return (
     <>
         
-        <main className="content border border-cyan-500 p-0">
+        <main className="content border border-cyan-500 bg-slate-200 p-0">
           <h1 className='text-xl font-bold'>Welcome {first} {last}</h1>
           <section>
             <div className='grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 mx-6 my-3 gap-1'>
             <Dashdiv id='Matric No:' style='shadow p-2 font-semibold' mat={matricno} img={<FaUserGraduate/>}/>
-            <Dashdiv id='Semester'  style='shadow p-2' mat='Second' img={<FaGraduationCap/>}/>
-            <Dashdiv id='Fugiat voluptate, dolores' level='level 3' style='shadow p-2'/>
-            <Dashdiv id='dolores accusamus dolore quae' level='level 4' style='shadow p-2'/>
+            <Dashdiv id='Semester'  style='shadow p-2' mat='Harmattan' img={<FaGraduationCap/>}/>
+            <Dashdiv id='Current CGPA'  style='shadow  p-2'mat='null' img={<BiLineChart/>}/>
+            <Dashdiv id='Department'  style='shadow p-2'mat='null' img={<FaBookOpen/>}/>
             <Dashdiv id='Lorem ipsum dolor sit' level='level 5' style='shadow p-2'/>
             <Dashdiv id='sit amet consectetur adipisicing' level='level 6' style='shadow p-2'/>
             <Dashdiv id='Fugiat voluptate, dolores' level='level 7' style='shadow p-2'/>

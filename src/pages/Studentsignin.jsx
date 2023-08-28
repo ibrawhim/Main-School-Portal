@@ -19,8 +19,8 @@ const Studentsignin = () => {
         // height: '60vh',
         backgroundColor: '#e5e7eb'
     }
-    // let url = 'http://localhost:4223/student/signin'
-    let url = 'https://school-portal-back.vercel.app/student/signup'
+    let url = 'http://localhost:4223/student/signin'
+    // let url = 'https://school-portal-back.vercel.app/student/signup'
 
     let formik = useFormik({
         initialValues: {
@@ -31,7 +31,7 @@ const Studentsignin = () => {
             // console.log(values);
             axios.post(url,values)
             .then((response)=>{
-                // console.log(result);
+                console.log(response);
                 if(!response.data.status){
                     console.log(response.data.message);
                 }else {
