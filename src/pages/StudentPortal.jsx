@@ -32,7 +32,8 @@ const StudentPortal = () => {
             <div className='bg-cyan-800 py-3 flex justify-between pe-3'>
             <button className='block md:hidden lg:hidden rounded  text-white' onClick={hideSideBar}><img className='text-white' src={nav} alt="" width={25}/></button>
                 <p className='text-black mx-5'>Name</p>
-                <p className='text-black mx-5'>image</p>
+                {/* <p className='text-black mx-5'>image</p> */}
+                <input type="file" />
             </div>
         <div className="app">
         <aside id='sideBar' className="sidebar bg-cyan-800 border border-cyan-500 shadow-2xl sm:w-auto  hidden sm:block">

@@ -16,8 +16,6 @@ const Studentsignin = () => {
 
     let myDiv = {
         minWidth: '100vw',
-        // marginBottom: '10%',
-        // height: '60vh',
         backgroundColor: '#e5e7eb'
     }
     let url = 'http://localhost:4223/student/signin'

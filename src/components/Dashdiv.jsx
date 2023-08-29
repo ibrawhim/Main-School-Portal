@@ -14,7 +14,7 @@ const Dashdiv = ({id,level,style,mat,img}) => {
     <div>
         <div className={style}>
             <div style={inDiv}>
-                {img}
+                <div className='text-red-500'> {img}</div>
                 {level}
             </div>
             <div className='flex justify-between font-bold'>
