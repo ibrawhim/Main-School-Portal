@@ -17,7 +17,7 @@ const Dashdiv = ({id,level,style,mat,img}) => {
                 {img}
                 {level}
             </div>
-            <div className='flex justify-between'>
+            <div className='flex justify-between font-bold'>
                 <p>{id}</p>
                 <p>{mat}</p>
             </div>

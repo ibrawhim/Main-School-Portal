@@ -7,7 +7,10 @@ import {FaUserGraduate} from 'react-icons/fa'
 import {FaGraduationCap} from 'react-icons/fa'
 import {BiLineChart} from 'react-icons/bi'
 import {FaBookOpen} from 'react-icons/fa'
-
+import {SiLevelsdotfyi} from 'react-icons/Si'
+import {IoIosPaper} from 'react-icons/Io'
+import {MdEmojiPeople} from 'react-icons/Md'
+import {BsPencilFill} from 'react-icons/Bs'
 
 
 
@@ -59,12 +62,12 @@ useEffect(() => {
             <div className='grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 mx-6 my-3 gap-1'>
             <Dashdiv id='Matric No:' style='shadow p-2 font-semibold' mat={matricno} img={<FaUserGraduate/>}/>
             <Dashdiv id='Semester'  style='shadow p-2' mat='Harmattan' img={<FaGraduationCap/>}/>
-            <Dashdiv id='Current CGPA'  style='shadow  p-2'mat='null' img={<BiLineChart/>}/>
-            <Dashdiv id='Department'  style='shadow p-2'mat='null' img={<FaBookOpen/>}/>
-            <Dashdiv id='Lorem ipsum dolor sit' level='level 5' style='shadow p-2'/>
-            <Dashdiv id='sit amet consectetur adipisicing' level='level 6' style='shadow p-2'/>
-            <Dashdiv id='Fugiat voluptate, dolores' level='level 7' style='shadow p-2'/>
-            <Dashdiv id='dolores accusamus dolore quae' level='level 8' style='shadow p-2'/>
+            <Dashdiv id='Current CGPA'  style='shadow  p-2'mat='nil' img={<BiLineChart/>}/>
+            <Dashdiv id='Department'  style='shadow p-2'mat='nil' img={<FaBookOpen/>}/>
+            <Dashdiv id='Current Level' style='shadow p-2' mat='nil'  img={<SiLevelsdotfyi/>}/>
+            <Dashdiv id='Attendance' style='shadow p-2' img={<IoIosPaper/>}/>
+            <Dashdiv id='Student Leave' mat="none" style='shadow p-2' img={<MdEmojiPeople/>}/>
+            <Dashdiv id='dolores accusamus ' style='shadow p-2' img={<BsPencilFill/>}/>
             </div>
           </section>
           <section className='mx-5 py-2'>
