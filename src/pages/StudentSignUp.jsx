@@ -74,8 +74,8 @@ const StudentSignUp = () => {
                         <small className="text-red-500">{formik.touched.password && formik.errors.password}</small>
                         <button type='submit' className='bg-cyan-800 my-2 p-1 text-white font-bold rounded'>Sign Up</button>
                         <div className='flex justify-between'>
-                            <p>Have an Account?</p>
-                            <Link className='underline' to="/student/signin">Sign In Here</Link>
+                            <p className='font-semibold'>Have an Account?</p>
+                            <Link className='underline text-cyan-600 font-semibold' to="/student/signin">Sign In Here</Link>
                         </div>
                     </form>
                 </div>

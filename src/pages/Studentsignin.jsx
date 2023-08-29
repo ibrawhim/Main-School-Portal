@@ -3,7 +3,8 @@ import photo from '../Images/photo.jpeg'
 import { Formik, useFormik } from 'formik';
 import * as Yup from 'yup'
 import axios from 'axios';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
+
 
 
 
@@ -62,6 +63,10 @@ const Studentsignin = () => {
                     <input type="text" placeholder='Password' className={formik.touched.password && formik.errors.password ? 'border-2 p-2 caret-red-400 rounded border-red-500': 'border-2 p-2 caret-cyan-400 rounded border-cyan-800 my-2'} name='password' onChange={formik.handleChange} onBlur={formik.handleBlur}/>
                     <small className='text-red-500'>{formik.touched.password && formik.errors.password}</small>
                     <button type='submit' className='bg-cyan-900 p-2 rounded text-white'>Sign In</button>
+                    <div className='flex justify-between my-2'>
+                    <p className='font-semibold'>New Here?</p>
+                    <Link to="/student/signup" className='text-cyan-600 underline'>Sign Up Here</Link>
+                </div>
                 </form>
             </div>
             <div className='me-10'>

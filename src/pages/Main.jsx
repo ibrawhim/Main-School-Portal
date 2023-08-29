@@ -45,6 +45,7 @@ useEffect(() => {
     setmatricno(response.data.response.matric);
     setfirst(response.data.response.firstname);
     setlast(response.data.response.lastname)
+    localStorage.setItem('myprofile',JSON.stringify(response.data))
   }
   
  })
