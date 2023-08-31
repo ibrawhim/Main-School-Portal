@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../Side.css'
 import {Link, Route, Routes} from 'react-router-dom'
 import nav from '../Images/nav.png'
@@ -10,11 +10,15 @@ import PayHistory from './PayHistory'
 import Course from './Course'
 import Notice from './Notice'
 import Help from './Help'
+import Chat from './Chat'
+
 
 
 
 
 const StudentPortal = () => {
+const [newImage, setnewImage] = useState("")
+
     const hideSideBar = () => {
         document.querySelector('.sidebar').style.display = 'block';
         document.querySelector('.sidebar').style.zIndex = '2';
@@ -26,14 +30,16 @@ const StudentPortal = () => {
       document.querySelector('.sidebar').style.display = 'block';
     }
     let sideBar = document.querySelector('.sidebar');
+
+    //  setnewImage(JSON.parse(localStorage.getItem('myimage')))
+    
    
   return (
     <>
             <div className='bg-cyan-800 py-3 flex justify-between pe-3'>
             <button className='block md:hidden lg:hidden rounded  text-white' onClick={hideSideBar}><img className='text-white' src={nav} alt="" width={25}/></button>
-                <p className='text-black mx-5'>Name</p>
-                {/* <p className='text-black mx-5'>image</p> */}
-                <input type="file" />
+                <p className='text-black mx-5 mt-5'>Name</p>
+                <img src={newImage} width={50} className=' rounded-full' alt="" />
             </div>
         <div className="app">
         <aside id='sideBar' className="sidebar bg-cyan-800 border border-cyan-500 shadow-2xl sm:w-auto  hidden sm:block">
@@ -46,6 +52,7 @@ const StudentPortal = () => {
             <Link onClick={dissapear} to="/portal/payhistory" className="item">Payment History</Link>
             <Link onClick={dissapear} to="/portal/course" className="item">Course Registration</Link>
             <Link onClick={dissapear} to="/portal/notice" className="item">Notice Board</Link>
+            <Link onClick={dissapear} to="/portal/chat" className="item">Chat With Students</Link>
             <Link onClick={dissapear} to="/portal/help" className="item">Help</Link>
             <Link to="" className="item">Log Out</Link>
           </nav>
@@ -60,6 +67,7 @@ const StudentPortal = () => {
           <Route path='/course' element={<Course/>}/>
           <Route path='/notice' element={<Notice/>}/>
           <Route path="/help" element={<Help/>}/>
+          <Route path='/chat' element={<Chat/>}/>
         </Routes>
       </div>
     </>

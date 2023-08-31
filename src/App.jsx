@@ -15,6 +15,7 @@ import Course from "./pages/Course"
 import Notice from "./pages/Notice"
 import Help from "./pages/Help"
 import Congratulation from "./pages/Congratulation"
+import Chat from "./pages/Chat"
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
         <Route path="/notice" element={<Notice/>}/>
         <Route path="/help" element={<Help/>}/>
         <Route path="/congrat" element={<Congratulation/>}/>
+        <Route path="/chat" element={<Chat/>}/>
       </Routes>
       <Footer/>
     </>
