@@ -1,8 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const Chat = () => {
+const Chat = ({socket}) => {
+    const [message, setmessage] = useState('')
+    const sendMessage = () => {
+        console.log(message);
+        socket.current.emit('sendMsg', message)
+    }
+    
   return (
-    <div>Chat</div>
+    <>
+        <div>
+            <input type="text" onChange={(e)=>setmessage(e.target.value)}/>
+            <button onClick={sendMessage}>Send</button>
+        </div>
+    </>
   )
 }
 
