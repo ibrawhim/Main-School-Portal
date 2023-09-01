@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 
 const Chat = ({socket}) => {
-    const [message, setmessage] = useState('')
+    const [message, setmessage] = useState("")
+
     const sendMessage = () => {
-        console.log(message);
-        socket.current.emit('sendMsg', message)
+        socket.current.emit('sendMsg',message)
     }
-    
+
   return (
     <>
         <div>

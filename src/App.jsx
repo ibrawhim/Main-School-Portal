@@ -22,11 +22,11 @@ import { useEffect, useRef} from "react"
 
 
 function App() {
-  let socket = useRef()
-  // console.log(socket.current);
-  let url = 'http://localhost:4223'
   
+  let socket = useRef()
+  console.log(socket)
   useEffect(() => {
+    let url = 'http://localhost:4223/'
     socket.current = socketClient(url)
   }, [])
   
