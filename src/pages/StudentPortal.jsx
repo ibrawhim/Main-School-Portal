@@ -10,7 +10,6 @@ import PayHistory from './PayHistory'
 import Course from './Course'
 import Notice from './Notice'
 import Help from './Help'
-import Chat from './Chat'
 
 
 
@@ -67,7 +66,6 @@ const [newImage, setnewImage] = useState("")
           <Route path='/course' element={<Course/>}/>
           <Route path='/notice' element={<Notice/>}/>
           <Route path="/help" element={<Help/>}/>
-          <Route path='/chat' element={<Chat/>}/>
         </Routes>
       </div>
     </>

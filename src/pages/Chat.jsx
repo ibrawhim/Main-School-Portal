@@ -1,19 +1,14 @@
 import React, { useState } from 'react'
 
+
 const Chat = ({socket}) => {
     const [message, setmessage] = useState("")
-
-    const sendMessage = () => {
-        socket.current.emit('sendMsg', message)
-        console.log(message);
-    }
-
   return (
     <>
-        <div>
-            <input type="text" onChange={(e)=>setmessage(e.target.value)}/>
-            <button onClick={sendMessage}>Send</button>
-        </div>
+    <div>
+        <input type="text" onChange={(e)=>setmessage(e.target.value)}/>
+        <button>SendMessage</button>
+    </div>
     </>
   )
 }

@@ -15,21 +15,21 @@ import Course from "./pages/Course"
 import Notice from "./pages/Notice"
 import Help from "./pages/Help"
 import Congratulation from "./pages/Congratulation"
+import socketClient from "socket.io-client"
 import Chat from "./pages/Chat"
-import socketClient from 'socket.io-client'
-import { useEffect, useRef} from "react"
+import { useEffect,useRef } from "react"
+
+
 
 
 
 function App() {
-  
   let socket = useRef()
-  let url = 'http://localhost:4223/'
-
-
+  console.log(socket.current);
+  let endpoint = 'http://localhost:4223/'
+  // socketClient(endpoint)
   useEffect(() => {
-    console.log(socket.current)
-    socket.current = socketClient(url)
+    socket.current = socketClient(endpoint)
   }, [])
   
 
@@ -52,7 +52,7 @@ function App() {
         <Route path="/notice" element={<Notice/>}/>
         <Route path="/help" element={<Help/>}/>
         <Route path="/congrat" element={<Congratulation/>}/>
-        <Route path="/chat" element={<Chat socket={socket}/>}/>
+        <Route path='/chat' element={<Chat socket={socket}/>}/>
       </Routes>
       <Footer/>
     </>
