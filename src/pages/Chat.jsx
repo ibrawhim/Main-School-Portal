@@ -4,7 +4,7 @@ const Chat = ({socket}) => {
     const [message, setmessage] = useState("")
 
     const sendMessage = () => {
-        socket.current.emit('sendMsg',message)
+        socket.current.emit('send Msg',message)
     }
 
   return (

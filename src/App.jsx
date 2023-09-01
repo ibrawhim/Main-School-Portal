@@ -16,17 +16,19 @@ import Notice from "./pages/Notice"
 import Help from "./pages/Help"
 import Congratulation from "./pages/Congratulation"
 import Chat from "./pages/Chat"
-import socketClient from 'socket.io-client'
 import { useEffect, useRef} from "react"
+import socketClient from 'socket.io-client'
 
 
 
 function App() {
   
   let socket = useRef()
-  console.log(socket)
+  let url = 'http://localhost:4223/'
+
+
   useEffect(() => {
-    let url = 'http://localhost:4223/'
+    console.log(socket.current)
     socket.current = socketClient(url)
   }, [])
   
