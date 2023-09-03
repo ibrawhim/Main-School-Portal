@@ -16,8 +16,8 @@ import Notice from "./pages/Notice"
 import Help from "./pages/Help"
 import Congratulation from "./pages/Congratulation"
 import socketClient from "socket.io-client"
-import Chat from "./pages/Chat"
 import { useEffect,useRef } from "react"
+import Chat from "./pages/Chat"
 
 
 
@@ -27,7 +27,6 @@ function App() {
   let socket = useRef()
   console.log(socket.current);
   let endpoint = 'http://localhost:4223/'
-  // socketClient(endpoint)
   useEffect(() => {
     socket.current = socketClient(endpoint)
   }, [])

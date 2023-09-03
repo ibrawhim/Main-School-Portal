@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import '../Side.css'
 import {Link, Route, Routes} from 'react-router-dom'
 import nav from '../Images/nav.png'
@@ -10,6 +10,8 @@ import PayHistory from './PayHistory'
 import Course from './Course'
 import Notice from './Notice'
 import Help from './Help'
+import socketClient from "socket.io-client"
+import Chat from './Chat'
 
 
 
@@ -32,7 +34,12 @@ const [newImage, setnewImage] = useState("")
 
     //  setnewImage(JSON.parse(localStorage.getItem('myimage')))
     
-   
+    let socket = useRef()
+    console.log(socket.current);
+    let endpoint = 'http://localhost:4223/'
+    useEffect(() => {
+      socket.current = socketClient(endpoint)
+    }, [])
   return (
     <>
             <div className='bg-cyan-800 py-3 flex justify-between pe-3'>
@@ -66,6 +73,7 @@ const [newImage, setnewImage] = useState("")
           <Route path='/course' element={<Course/>}/>
           <Route path='/notice' element={<Notice/>}/>
           <Route path="/help" element={<Help/>}/>
+          <Route path='/chat' element={<Chat socket={socket}/>}/>
         </Routes>
       </div>
     </>
