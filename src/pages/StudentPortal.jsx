@@ -18,7 +18,8 @@ import Chat from './Chat'
 
 
 const StudentPortal = () => {
-const [newImage, setnewImage] = useState("")
+const [newfirstname, setNewfirstname] = useState("")
+const [newlastname, setNewlastname] = useState("")
 
     const hideSideBar = () => {
         document.querySelector('.sidebar').style.display = 'block';
@@ -32,20 +33,22 @@ const [newImage, setnewImage] = useState("")
     }
     let sideBar = document.querySelector('.sidebar');
 
-    //  setnewImage(JSON.parse(localStorage.getItem('myimage')))
     
     let socket = useRef()
     console.log(socket.current);
     let endpoint = 'http://localhost:4223/'
     useEffect(() => {
       socket.current = socketClient(endpoint)
+      let myprofile = (JSON.parse(localStorage.getItem('myprofile')))
+      setNewfirstname(myprofile.response.firstname);
+      setNewlastname(myprofile.response.lastname)
     }, [])
   return (
     <>
             <div className='bg-cyan-800 py-3 flex justify-between pe-3'>
             <button className='block md:hidden lg:hidden rounded  text-white' onClick={hideSideBar}><img className='text-white' src={nav} alt="" width={25}/></button>
-                <p className='text-black mx-5 mt-5'>Name</p>
-                <img src={newImage} width={50} className=' rounded-full' alt="" />
+                <p className='text-teal-500 font-bold text-2xl mx-5 lg:mt-5 sm:mt-2'>{newfirstname} {newlastname}</p>
+                {/* <img src={newImage} width={50} className=' rounded-full' alt="" /> */}
             </div>
         <div className="app">
         <aside id='sideBar' className="sidebar bg-cyan-800 border border-cyan-500 shadow-2xl sm:w-auto  hidden sm:block">

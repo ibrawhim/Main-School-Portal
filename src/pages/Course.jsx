@@ -12,10 +12,11 @@ const Course = () => {
 }
   return (
     <>
-      <main className="content grid border border-cyan-500 bg-slate-200 p-0">
+    <div>
+      <main className="grid border border-cyan-500 bg-slate-200">
             <h1 className='font-bold text-cyan-800'>COURSE REGISTRATION</h1>
-            <div className='border w-1/2 grid bg-cyan-800 mb-96'>
-                <select name="" id="" className='bg-cyan-800 text-white  shadow-xl'>
+            <div className='border bg-cyan-800'>
+                <select name="" id="" className='bg-cyan-800 text-white shadow-xl'>
                   <option value="">Select Courses</option>
                   <option value="">CHE 101</option>
                   <option value="">MTH 102</option>
@@ -30,6 +31,7 @@ const Course = () => {
                 <button className='my-3 text-white'>Add Course</button>
             </div>
         </main>
+        </div>
     </>
   )
 }
