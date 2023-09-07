@@ -3,7 +3,6 @@ import 'animate.css';
 import indians from '../Images/indians.jpg'
 import Div from '../components/Div'
 import fully from '../Images/fully.jpg'
-import Card from '../components/Card';
 import teen from '../Images/teen.jpg'
 import kid from '../Images/kid.jpg'
 
@@ -47,12 +46,23 @@ const Landing = () => {
             </section>
 
             <section>
-                <Card image={teen}/>
-                <Card image={kid}/>
+             <div className='flex'>
+                <div className='bg-white border-4 shadow-md lg:grid-cols-5 md:grid-cols-5 sm:grid-cols-12'>
+                    <img src={teen} alt="" />
+                    <h2 className='text-xl font-semibold mb-2'>Card Title</h2>
+                    <p className='text-grey-600'>Card content goes here.</p>
+                </div>
+                <div className='bg-white shadow-md lg:grid-cols-5 md:grid-cols-5 sm:grid-cols-12'>
+                    <img src={kid} alt="" />
+                    <h2 className='text-xl font-semibold mb-2'>Card Title</h2>
+                    <p className='text-grey-600'>Card content goes here.</p>
+                </div>
+             </div>
             </section>
         </div>
     </>
   )
 }
+
 
 export default Landing

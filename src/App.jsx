@@ -18,7 +18,6 @@ import Congratulation from "./pages/Congratulation"
 import socketClient from "socket.io-client"
 import { useEffect,useRef } from "react"
 import Chat from "./pages/Chat"
-import Card from "./components/Card"
 
 
 
@@ -53,7 +52,6 @@ function App() {
         <Route path="/help" element={<Help/>}/>
         <Route path="/congrat" element={<Congratulation/>}/>
         <Route path='/chat' element={<Chat socket={socket}/>}/>
-        <Route path="/card" element={<Card/>}/>
       </Routes>
       <Footer/>
     </>
