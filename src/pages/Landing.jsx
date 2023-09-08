@@ -7,6 +7,7 @@ import teens from '../Images/teens.jpg'
 import kid from '../Images/kid.jpg'
 import Black from '../Images/Black.jpg'
 import Raising from '../Images/Raising.jpg'
+import news2 from '../Images/news2.jpg'
 
 const Landing = () => {
     let myFont = {
@@ -47,8 +48,19 @@ const Landing = () => {
                 <Div name='Wonders of Education' title='Education is a journey of enlightenment, a path paved with countless benefits that enrich our lives in remarkable ways. Beyond the confines of classrooms and lecture halls, it is a force that shapes individuals and society, fostering growth, progress, and understanding.' title2='At its core, education is empowerment. It equips individuals with the knowledge and skills needed to navigate lifes complexities. It empowers us to make informed decisions, enabling us to take charge of our destinies. Education is the key that unlocks doors to opportunities we might never have imagined.' title3='One of educations most awe-inspiring features is its capacity to foster innovation. From scientific breakthroughs to technological marvels, education fuels progress. It encourages the curious to ask Why? and the bold to ponder What if? The results are inventions, discoveries, and solutions that transform the world.' style='bg-white rounded-md text-dark text-justify'/>
                 <Div name='Wonders of Education cont.' title='Technological advancements continually enhance the educational experience. Digital tools and online resources have made education more accessible and engaging than ever before, opening up new avenues for learning.' title2='Education is not confined to institutions; it also plays a role in community building. Schools and universities often serve as hubs, fostering social connections and a sense of belonging. They create communities that support and inspire one another.' title3='Perhaps one of the most remarkable aspects of education is that it is a lifelong pursuit. It encourages us to embrace the joy of learning and continually seek new knowledge and experiences. Education reminds us that our journey of discovery never truly ends.' style='text-white border-2 rounded-md text-justify' mystyle={newStyle}/>
             </section>
-
-            <section className='m-4'>
+            <section className='mx-4'>
+                <div className='grid sm:grid-cols-1 md:grid-cols-12 lg:grid-cols-1 xl:grid-cols-2 lg:my-16'>
+                    <div className='mt-4'>
+                        <h1 style={myFont} className='text-6xl text-white lg:mt-9 font-bold text-center'>
+                        The more that you read, the more things you will know, the more that you learn, the more places you’ll go.” —Dr. Seuss
+                        </h1>
+                    </div>
+                    <div className='mt-4'>
+                        <img className='rounded' src={news2} alt="" />
+                    </div>
+                </div>
+            </section>
+            <section className='my-20 mx-4'>
              <div className='grid lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-12 gap-4'>
                 <div className='bg-white shadow-md my-2 shadow-xl'>
                     <img src={teens}  alt=""/>

@@ -50,8 +50,8 @@ const StudentSignUp = () => {
   return (
     <>
         <div className='lg:ps-5'>
-            <section className='grid lg:grid-cols-2 lg:my-5 md:grid-cols-2 sm:grid-cols-1 justify-content-center align-items-center'>
-                <div className='grid p-4 '>
+            <section className='grid lg:grid-cols-2 lg:my-5 md:grid-cols-2 sm:grid-cols-12'>
+                <div className='grid p-4 flex justify-center'>
                 <h1 className='font-bold text-3xl'>SIGN UP</h1>
                     <form action="" onSubmit={formik.handleSubmit} className='border-4 border-cyan-500 rounded-xl grid lg:grid-cols-1 md:grid-cols-2 sm:grid-cols-1 w-96 p-2 my-2'>
                         <label htmlFor="Firstname">Firstname</label>

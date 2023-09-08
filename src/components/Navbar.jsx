@@ -27,6 +27,8 @@ function Navbar() {
     padding: '10px',
     marginLeft: '-10px',
     marginTop: '20px',
+    background: "linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2))"
+    // background: linear-gradient(to bottom, #ffffff, #ffffff)"
   }
 
   return isHidden ? null : (
@@ -41,8 +43,8 @@ function Navbar() {
         <ul className='ms-5 flex flex-row'>
         <li onMouseOver={showDropdown}>Portal</li>
         <li style={myPortal} className=" dropdown-content hidden shadow-2xl bg-cyan-800 my-4" onMouseOut={hideDropdown} onMouseOver={showDropdown}>
-            <div><Link className='text-white' to="/student/signup">Student</Link></div>
-            <div><Link className='text-white' to="">Admin</Link></div>
+            <div><Link className='text-cyan-800 font-bold' to="/student/signup">Student</Link></div>
+            <div><Link className='text-cyan-800 font-bold' to="">Admin</Link></div>
         </li>
         </ul>
         <div className='ms-5 sm:ms-3'><a href="#">Contact</a></div>
