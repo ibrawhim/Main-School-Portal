@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import '../Side.css'
-import {Link, Route, Routes} from 'react-router-dom'
+import {Link, Navigate, Route, Routes, useNavigate} from 'react-router-dom'
 import nav from '../Images/nav.png'
 import close from '../Images/close.svg'
 import Profile from './Profile'
@@ -17,9 +17,11 @@ import Chat from './Chat'
 
 
 
+
 const StudentPortal = () => {
 const [newfirstname, setNewfirstname] = useState("")
 const [newlastname, setNewlastname] = useState("")
+    const navigate = useNavigate()
 
     const hideSideBar = () => {
         document.querySelector('.sidebar').style.display = 'block';
@@ -30,6 +32,11 @@ const [newlastname, setNewlastname] = useState("")
     }
     const dissapear = () => {
       document.querySelector('.sidebar').style.display = 'block';
+    }
+    const logOut = ()=> {
+      localStorage.removeItem('token')
+      // localStorage.removeItem('myprofile')
+      // navigate("/student/signin")
     }
     let sideBar = document.querySelector('.sidebar');
 
@@ -63,7 +70,7 @@ const [newlastname, setNewlastname] = useState("")
             <Link onClick={dissapear} to="/portal/notice" className="item">Notice Board</Link>
             <Link onClick={dissapear} to="/portal/chat" className="item">Chat With Students</Link>
             <Link onClick={dissapear} to="/portal/help" className="item">Help</Link>
-            <Link to="" className="item">Log Out</Link>
+            <Link to="/student/signin" onClick={logOut} className="item">Log Out</Link>
           </nav>
         </aside>
         
