@@ -44,7 +44,7 @@ const [newlastname, setNewlastname] = useState("")
     
     let socket = useRef()
     console.log(socket.current);
-    let endpoint = 'http://localhost:4223/'
+    let endpoint = 'https://main-school-portal.onrender.com'
     useEffect(() => {
       socket.current = socketClient(endpoint)
       let myprofile = (JSON.parse(localStorage.getItem('myprofile')))
