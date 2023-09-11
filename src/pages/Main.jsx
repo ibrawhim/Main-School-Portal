@@ -26,7 +26,7 @@ const [matricno, setmatricno] = useState("")
 const [first, setfirst] = useState("")
 const [last, setlast] = useState("")
 
-let endpoint = 'http://localhost:4223/student/portal'
+let endpoint = 'https://main-school-portal.onrender.com/student/portal'
 let token = localStorage.token
 let navigate = useNavigate()
 
