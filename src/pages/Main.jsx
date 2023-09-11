@@ -75,7 +75,7 @@ useEffect(() => {
           </section>
           <section className='mx-5 py-2'>
             <div className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-3  rounded'>
-              <div className=' shadow p-2 border'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta autem laboriosam modi libero, fugiat voluptates accusantium eum a cumque laborum sint architecto ipsa animi soluta atque vero adipisci dolorem id eos, excepturi rerum expedita similique possimus ea! Aliquid beatae, architecto dolores quis nostrum quisquam corporis eius ducimus repudiandae officiis debitis!</div>
+              <div className=' shadow p-2 border'> me Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta autem laboriosam modi libero, fugiat voluptates accusantium eum a cumque laborum sint architecto ipsa animi soluta atque vero adipisci dolorem id eos, excepturi rerum expedita similique possimus ea! Aliquid beatae, architecto dolores quis nostrum quisquam corporis eius ducimus repudiandae officiis debitis!</div>
               <div className=' shadow p-2 border'>
                 Lorem ipsum dolor, sit amet consectetur adiisicing elit. Quaerat possimus vitae, iusto consectetur atque id accusamus. Tenetur aliquid unde possimus.
               </div>
