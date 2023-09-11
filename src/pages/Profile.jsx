@@ -52,7 +52,7 @@ const Profile = () => {
     <>
       <main className="content grid border border-cyan-500 bg-slate-200 p-10">
           <div className='flex justify-between'>
-            <h1 className='font-bold'>PROFILE</h1>
+            <h1 className='font-bold'>PROFILES</h1>
             <div className='h-full'>
              <img src={newImage} width={100} className='h-full rounded-full' alt="" />
             </div>

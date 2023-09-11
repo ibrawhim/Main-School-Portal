@@ -10,8 +10,7 @@ import axios from 'axios'
 
 const StudentSignUp = () => {
     const navigate = useNavigate()
-    let endpoint1 = 'https://school-portal-back.onrender.com/student/signup'
-    // let endpoint1 = 'https://school-portal-back.vercel.app/student/signup'
+    let endpoint1 = 'http://localhost:4223/student/signup/'
     let formik = useFormik({
         initialValues: {
             firstname: "",
