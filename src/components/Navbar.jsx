@@ -34,7 +34,7 @@ function Navbar() {
   return isHidden ? null : (
     <>
     <nav className="navbar text-white sm:ms-0 bg-cyan-800 z-10 sticky top-0">
-      <span className='font-bold'>UNIVERSITY</span><button className="toggle-button text-white  block md:hidden" onClick={toggleNavbar}>
+      <span className='font-bold'>UNIVERSIT</span><button className="toggle-button text-white  block md:hidden" onClick={toggleNavbar}>
         &#9776;
       </button>
       <ul className={`navbar-items ${isOpen ? 'active' : ''} sm:ps-3 bg-cyan-800 my-8`}>
