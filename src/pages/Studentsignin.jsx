@@ -18,7 +18,7 @@ const Studentsignin = () => {
         // minWidth: '100vw',
         backgroundColor: '#e5e7eb'
     }
-    let url = 'https://school-portal-back.onrender.com/student/signin'
+    let url = 'https://main-school-portal.onrender.com/student/signin'
     // let url = 'https://school-portal-back.vercel.app/student/signup'
 
     let formik = useFormik({

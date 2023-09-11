@@ -10,7 +10,7 @@ import axios from 'axios'
 
 const StudentSignUp = () => {
     const navigate = useNavigate()
-    let endpoint1 = 'http://localhost:4223/student/signup/'
+    let endpoint1 = 'https://main-school-portal.onrender.com/student/signup/'
     let formik = useFormik({
         initialValues: {
             firstname: "",
