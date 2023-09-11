@@ -7,7 +7,7 @@ import {FaUserGraduate} from 'react-icons/fa'
 import {FaGraduationCap} from 'react-icons/fa'
 import {BiLineChart} from 'react-icons/bi'
 import {FaBookOpen} from 'react-icons/fa'
-import {SiLevelsdotfyi} from 'react-icons/Si'
+// import {SiLevelsdotfyi} from 'react-icons/Si'
 import {IoIosPaper} from 'react-icons/Io'
 import {MdEmojiPeople} from 'react-icons/Md'
 import {BsPencilFill} from 'react-icons/Bs'
@@ -67,7 +67,7 @@ useEffect(() => {
             <Dashdiv id='Semester'  style='shadow p-2' mat='Harmattan' img={<FaGraduationCap/>}/>
             <Dashdiv id='Current CGPA'  style='shadow  p-2'mat='nil' img={<BiLineChart/>}/>
             <Dashdiv id='Department'  style='shadow p-2'mat='nil' img={<FaBookOpen/>}/>
-            <Dashdiv id='Current Level' style='shadow p-2' mat='nil'  img={<SiLevelsdotfyi/>}/>
+            {/* <Dashdiv id='Current Level' style='shadow p-2' mat='nil'  img={<SiLevelsdotfyi/>}/> */}
             <Dashdiv id='Attendance' style='shadow p-2' img={<IoIosPaper/>}/>
             <Dashdiv id='Student Leave' mat="none" style='shadow p-2' img={<MdEmojiPeople/>}/>
             <Dashdiv id='dolores accusamus ' style='shadow p-2' img={<BsPencilFill/>}/>
