@@ -39,9 +39,11 @@ useEffect(() => {
     }
  })
  .then((response)=>{
+  console.log(response.data);
   if(!response.data.status){
     navigate('/student/signin')
   } else {
+    localStorage.setItem('mystatus',JSON.stringify(response.data.status))
     setmatricno(response.data.response.matric);
     setfirst(response.data.response.firstname);
     setlast(response.data.response.lastname)

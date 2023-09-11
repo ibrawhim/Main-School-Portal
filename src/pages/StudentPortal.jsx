@@ -35,6 +35,7 @@ const [newlastname, setNewlastname] = useState("")
     }
     const logOut = ()=> {
       localStorage.removeItem('token')
+      localStorage.removeItem('mystatus')
       // localStorage.removeItem('myprofile')
       // navigate("/student/signin")
     }

@@ -1,15 +1,23 @@
-  import React from 'react'
+  import React, { useEffect } from 'react'
   import nav from '../Images/nav.png'
+import { Navigate, useNavigate } from 'react-router-dom';
+  
 
 
 const Course = () => {
-
+  const navigate = useNavigate()
   const hideSideBar = () => {
     console.log(sidebar);
     
     document.querySelector('.sidebar').style.width = '100%';
     document.querySelector('.content').style.display = 'none';
 }
+useEffect(() => {
+  if(!localStorage.mystatus){
+    navigate('/student/signin')
+  }
+}, [])
+
   return (
     <>
     <div>

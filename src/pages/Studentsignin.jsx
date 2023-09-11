@@ -15,10 +15,10 @@ const Studentsignin = () => {
     // console.log(mee);
 
     let myDiv = {
-        minWidth: '100vw',
+        // minWidth: '100vw',
         backgroundColor: '#e5e7eb'
     }
-    let url = 'http://localhost:4223/student/signin'
+    let url = 'https://school-portal-back.onrender.com/student/signin'
     // let url = 'https://school-portal-back.vercel.app/student/signup'
 
     let formik = useFormik({
@@ -51,9 +51,9 @@ const Studentsignin = () => {
     // console.log(formik.touched);
   return (
     <>
-    <div style={myDiv} className='overflow-hidden'>
-        <section className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 justify-center items-center border border-red-900'>
-            <div className='grid justify-center mt-20'>
+    <div style={myDiv}>
+        <section className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 justify-center items-center'>
+            <div className='grid justify-center my-10'>
                 <form action="" onSubmit={formik.handleSubmit} className='flex flex-col w-96 shadow-2xl p-6 rounded-2xl'>
                 <h1 className='text-cyan-400'>SIGN IN</h1>
                     <input type="text" placeholder='name@mail.com' className={formik.touched.email && formik.errors.email ? 'border-2 p-2 caret-red-400 rounded border-red-500': 'border-2 p-2 caret-cyan-400 rounded border-cyan-800 my-2'} name='email' onChange={formik.handleChange} onBlur={formik.handleBlur}/>
@@ -67,8 +67,8 @@ const Studentsignin = () => {
                 </div>
                 </form>
             </div>
-            <div className='me-10'>
-                <img src={photo} className='rounded-2xl m-4 sm:m-2 md:m-8  lg:mx-6 xl:m-10' alt=""/>
+            <div>
+                <img src={photo} className='w-full'  alt=""/>
             </div>
         </section>
     </div>

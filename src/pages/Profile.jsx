@@ -1,5 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { Navigate } from 'react-router-dom'
+
 
 
 
@@ -12,14 +14,18 @@ const Profile = () => {
   const [image, setimage] = useState('')
   const [newImage, setnewImage] = useState('')
 
-  let endpoint = 'http://localhost:4223/student/image'
+  let endpoint = 'https://school-portal-back.onrender.com/student/image'
   useEffect(() => {
+    if(!localStorage.mystatus){
+      navigate('/student/signin')
+    }else {
    let myProfile = JSON.parse(localStorage.getItem('myprofile'))
    console.log(myProfile.response.firstname);
    setfirstname(myProfile.response.firstname)
    setlastname(myProfile.response.lastname)
    setemail(myProfile.response.email)
    setmatric(myProfile.response.matric)
+    }
   }, [])
 
   const changeFile = (e) => {

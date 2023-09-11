@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import {BsSend} from 'react-icons/Bs'
+import { Navigate, useNavigate } from 'react-router-dom'
 
 
 
 const Chat = ({socket}) => {
+  const navigate = useNavigate()
     const [message, setmessage] = useState("")
     const [allmessages, setallmessages] = useState([])
     useEffect(() => {
-     if(socket.current){
+      if(!localStorage.mystatus){
+        navigate('/student/signin')
+      }
+     else if(socket.current){
        socket.current.on("broadcastMsg",(receivedMessage)=>{
         //  console.log(receivedMessage);
          setallmessages([...allmessages,receivedMessage])

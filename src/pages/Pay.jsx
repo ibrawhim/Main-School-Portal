@@ -1,13 +1,21 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import nav from '../Images/nav.png'
 import { useFlutterwave, closePaymentModal } from 'flutterwave-react-v3';
+import { Navigate, useNavigate } from 'react-router-dom';
+
 
 
 
 
 const Pay = () => {
   
-  
+  const navigate = useNavigate()
+  useEffect(() => {
+    if(!localStorage.mystatus){
+      navigate('/student/signin')
+    }
+  }, [])
+
   const hideSideBar = () => {
     console.log(sidebar);
     
