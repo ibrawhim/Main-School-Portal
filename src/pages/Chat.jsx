@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {BsSend} from 'react-icons/Bs'
+// import {BsSend} from 'react-icons/Bs'
 import { Navigate, useNavigate } from 'react-router-dom'
 
 
@@ -28,7 +28,7 @@ const Chat = ({socket}) => {
     <div>
       <div className='flex justify-center items-center'>
         <input type="text" onChange={(e)=>setmessage(e.target.value)} value={message} className='border border-black p-3'/>
-        <button className='bg-black p-2 text-white my-1' onClick={sendMessage}><BsSend/></button>
+        <button className='bg-black p-2 text-white my-1' onClick={sendMessage}>Send</button>
       </div>
         <div>
           {allmessages.map((msg,index)=>(

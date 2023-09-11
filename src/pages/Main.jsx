@@ -3,14 +3,14 @@ import '../Side.css'
 import {Link, Navigate, useNavigate} from 'react-router-dom'
 import Dashdiv from '../components/Dashdiv'
 import axios from 'axios'
-import {FaUserGraduate} from 'react-icons/fa'
-import {FaGraduationCap} from 'react-icons/fa'
-import {BiLineChart} from 'react-icons/bi'
-import {FaBookOpen} from 'react-icons/fa'
-// import {SiLevelsdotfyi} from 'react-icons/Si'
-import {IoIosPaper} from 'react-icons/Io'
-import {MdEmojiPeople} from 'react-icons/Md'
-import {BsPencilFill} from 'react-icons/Bs'
+// import {FaUserGraduate} from 'react-icons/fa'
+// import {FaGraduationCap} from 'react-icons/fa'
+// import {BiLineChart} from 'react-icons/bi'
+// import {FaBookOpen} from 'react-icons/fa'
+// // import {SiLevelsdotfyi} from 'react-icons/Si'
+// import {IoIosPaper} from 'react-icons/Io'
+// import {MdEmojiPeople} from 'react-icons/Md'
+// import {BsPencilFill} from 'react-icons/Bs'
 
 
 
@@ -63,14 +63,14 @@ useEffect(() => {
           <h1 className='text-xl font-bold'>Welcome {first} {last}</h1>
           <section>
             <div className='grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 mx-6 my-3 gap-1'>
-            <Dashdiv id='Matric No:' style='shadow p-2 font-semibold' mat={matricno} img={<FaUserGraduate/>}/>
-            <Dashdiv id='Semester'  style='shadow p-2' mat='Harmattan' img={<FaGraduationCap/>}/>
-            <Dashdiv id='Current CGPA'  style='shadow  p-2'mat='nil' img={<BiLineChart/>}/>
-            <Dashdiv id='Department'  style='shadow p-2'mat='nil' img={<FaBookOpen/>}/>
+            <Dashdiv id='Matric No:' style='shadow p-2 font-semibold' mat={matricno}/>
+            <Dashdiv id='Semester'  style='shadow p-2' mat='Harmattan'/>
+            <Dashdiv id='Current CGPA'  style='shadow  p-2'mat='nil'/>
+            <Dashdiv id='Department'  style='shadow p-2'mat='nil'/>
             {/* <Dashdiv id='Current Level' style='shadow p-2' mat='nil'  img={<SiLevelsdotfyi/>}/> */}
-            <Dashdiv id='Attendance' style='shadow p-2' img={<IoIosPaper/>}/>
-            <Dashdiv id='Student Leave' mat="none" style='shadow p-2' img={<MdEmojiPeople/>}/>
-            <Dashdiv id='dolores accusamus ' style='shadow p-2' img={<BsPencilFill/>}/>
+            <Dashdiv id='Attendance' style='shadow p-2'/>
+            <Dashdiv id='Student Leave' mat="none" style='shadow p-2'/>
+            <Dashdiv id='dolores accusamus ' style='shadow p-2'/>
             </div>
           </section>
           <section className='mx-5 py-2'>

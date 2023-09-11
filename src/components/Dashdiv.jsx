@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const Dashdiv = ({id,level,style,mat,img}) => {
+const Dashdiv = ({id,level,style,mat}) => {
   let inDiv = {
     borderBottom: '1px solid',
     padding: '2px',
@@ -14,7 +14,7 @@ const Dashdiv = ({id,level,style,mat,img}) => {
     <div>
         <div className={style}>
             <div style={inDiv}>
-                <div className='text-red-500'> {img}</div>
+                <div className='text-red-500'></div>
                 {level}
             </div>
             <div className='flex justify-between font-bold'>
