@@ -40,6 +40,11 @@
     .toggle-button {
       display: block;
     }
+    /* @media screen and (max-width: 1279px) {
+      #dropd {
+        margin-bottom: 400px;
+      }
+    } */
     
   }
 
