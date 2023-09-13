@@ -1,5 +1,4 @@
 import React from 'react'
-// import student from '../Images/students.gif'
 import { useFormik } from "formik";
 import * as Yup from 'yup'
 import {Link, Navigate, json, useNavigate} from 'react-router-dom'
@@ -77,9 +76,6 @@ const StudentSignUp = () => {
                         </div>
                     </form>
                 </div>
-                {/* <div>
-                    <img src={student} width={450} alt="" />
-                </div> */}
             </section>
         </div>
     </>

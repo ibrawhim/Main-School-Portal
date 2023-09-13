@@ -18,6 +18,7 @@
     text-decoration: none;
     /* color: white; */
   }
+
   
   /* Styles for small screens */
   @media screen and (max-width: 768px) {
@@ -39,5 +40,7 @@
     .toggle-button {
       display: block;
     }
+    
   }
+
   

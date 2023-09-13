@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import '../Navbar.css'; // Create a CSS file for stydivng
+import '../Navbar.css'; 
 import {Link, useLocation} from 'react-router-dom'
 
 
 function Navbar() {
   const location = useLocation()
   const [isOpen, setIsOpen] = useState(false);
-  const hiddenRoutes = ['/portal/','/portal','/portal/dash','/portal/profile','/congrat','/portal/pay','/portal/course','/portal/payhistory','/portal/notice','/portal/help','/portal/chat'];
+  const hiddenRoutes = ['/portal/','/portal','/portal/dash','/portal/profile','/congrat','/portal/pay','/portal/course','/portal/payhistory','/portal/notice','/portal/help','/portal/chat', '/about'];
   const isHidden = hiddenRoutes.includes(location.pathname);
 
 
@@ -21,15 +21,19 @@ function Navbar() {
   const hideDropdown = () => {
     document.querySelector('.dropdown-content').style.display = 'none';
   }
+  
+  const hide = () => {
+    document.querySelector('.dropdown-content').style.display = 'none';
+  }
 
   let myPortal = {
     position: 'fixed',
     padding: '10px',
     marginLeft: '-10px',
-    marginTop: '20px',
+    marginTop: '40px',
     background: "linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2))"
-    // background: linear-gradient(to bottom, #ffffff, #ffffff)"
   }
+  
 
   return isHidden ? null : (
     <>
@@ -40,14 +44,14 @@ function Navbar() {
       <ul className={`navbar-items ${isOpen ? 'active' : ''} sm:ps-3 bg-cyan-800 my-8`}>
         <div className='ms-5 sm:ms-3'><Link to="/">Home</Link></div>
         <div className='ms-5 sm:ms-3'><Link to="/portal/dash">Dashboard</Link></div>
-        <ul className='ms-5 flex flex-row'>
-        <li onMouseOver={showDropdown}>Portal</li>
-        <li style={myPortal} className=" dropdown-content hidden shadow-2xl bg-cyan-800 my-4" onMouseOut={hideDropdown} onMouseOver={showDropdown}>
-            <div><Link className='text-cyan-800 font-bold' to="/student/signup">Student</Link></div>
+        <ul className='ms-3 flex flex-row'>
+        <li  onMouseOver={showDropdown}>Portal</li>
+        <li style={myPortal} className="dropdown-content hidden shadow-2xl bg-cyan-800 my-4" onMouseOut={hideDropdown} onMouseOver={showDropdown}>
+            <div onClick={hide}><Link  className='text-cyan-800 font-bold' to="/student/signup">Student</Link></div>
             <div><Link className='text-cyan-800 font-bold' to="">Admin</Link></div>
         </li>
         </ul>
-        <div className='ms-5 sm:ms-3'><a href="#">Contact</a></div>
+        <div className='ms-5 sm:ms-3'><Link to="/about">About</Link></div>
       </ul>
     </nav>
     </>

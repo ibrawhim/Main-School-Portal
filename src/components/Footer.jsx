@@ -8,7 +8,7 @@ import { useLocation } from 'react-router-dom'
 // }
 const Footer = () => {
   const location = useLocation()
-  const hiddenRoutes = ['/congrat'];
+  const hiddenRoutes = ['/congrat','/about'];
   const isHidden = hiddenRoutes.includes(location.pathname);  
 
   return isHidden ? null :  (
