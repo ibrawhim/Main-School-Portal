@@ -1,5 +1,4 @@
-  import React, { useEffect } from 'react'
-  import nav from '../Images/nav.png'
+ import React, { useEffect } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom';
   
 
