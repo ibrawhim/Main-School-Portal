@@ -19,18 +19,19 @@ import socketClient from "socket.io-client"
 import { useEffect,useRef } from "react"
 import Chat from "./pages/Chat"
 import About from "./pages/About"
+import PaymentForm from "./pages/PaymentForm"
 
 
 
 
 
 function App() {
-  let socket = useRef()
-  console.log(socket.current);
-  let endpoint = 'http://localhost:4223/'
-  useEffect(() => {
-    socket.current = socketClient(endpoint)
-  }, [])
+  // let socket = useRef()
+  // console.log(socket.current);
+  // let endpoint = 'http://localhost:4223/'
+  // useEffect(() => {
+  //   socket.current = socketClient(endpoint)
+  // }, [])
   
 
   return (
@@ -52,8 +53,9 @@ function App() {
         <Route path="/notice" element={<Notice/>}/>
         <Route path="/help" element={<Help/>}/>
         <Route path="/congrat" element={<Congratulation/>}/>
-        <Route path='/chat' element={<Chat socket={socket}/>}/>
+        <Route path='/chat' element={<Chat/>}/>
         <Route path='/about' element={<About/>}/>
+        <Route path="/paym" element={<PaymentForm/>}/>
       </Routes>
       <Footer/>
     </>

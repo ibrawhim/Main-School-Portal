@@ -36,6 +36,8 @@ const Help = () => {
       .then((response)=>{
         console.log(response.data.result);
         setmyhelp(response.data.result)
+        setsubject("")
+        sethelp("")
       })
       .catch((error)=>{
         console.log(error);
@@ -48,14 +50,16 @@ const Help = () => {
           <div className=' shadow-xl p-4'>
             <h4 className='font-semibold'>WHAT DO YOU NEED HELP WITH?</h4>
               <p className='text-xl text-justify'>This page is solely created to help students answer their questions and help with any issues they have.</p>
-              <input type="text"  placeholder='Subject' className='w-full border border-black py-2 my-2 rounded' onChange={(e)=>setsubject(e.target.value)}/>
-              <textarea   id="" cols="30" rows="10" placeholder='How can we help?' className='my-3 border w-full border-black rounded' onChange={(e)=>sethelp(e.target.value)}></textarea>
+              <input type="text"  placeholder='Subject' className='w-full border border-black py-2 my-2 rounded' onChange={(e)=>setsubject(e.target.value)} value={subject}/>
+              <textarea   id="" cols="30" rows="10" placeholder='How can we help?' className='my-3 border w-full border-black rounded' onChange={(e)=>sethelp(e.target.value)} value={help}></textarea>
               <button onClick={sendHelp} className='w-full text-center bg-cyan-800 text-white py-2 rounded hover:bg-cyan-700 hover:text-black hover:font-bold'>Send</button>
           </div>
         </section>
-        <section className='my-10 mx-2'>
+          {myhelp ?  
+        <section className='my-10 mx-2'> 
           <div className='shadow p-4'>
-            <div className='border my-2 border-black rounded px-2'><span className='font-semibold'>Subject:</span> {myhelp.subject}</div>
+
+              <div className='border my-2 border-black rounded px-2'><span className='font-semibold'>Subject:</span> {myhelp.subject}</div>
             <div className='border my-2 border-black rounded px-2'><span className='font-semibold'>Issue:</span> {myhelp.help}</div>
             <div className='border border-black rounded px-2'>
               <div><span className='font-semibold'>Time:</span> {myhelp.helpTime}</div>
@@ -64,6 +68,7 @@ const Help = () => {
             <button className='w-full bg-cyan-800 my-2 text-white py-2 rounded hover:bg-cyan-700 hover:text-black hover:font-bold'>Delete</button>
           </div>
         </section>
+         : "" }
       </div>
     </>
   )

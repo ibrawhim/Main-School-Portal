@@ -50,7 +50,7 @@ const [newlastname, setNewlastname] = useState("")
       let myprofile = (JSON.parse(localStorage.getItem('myprofile')))
       setNewfirstname(myprofile.response.firstname);
       setNewlastname(myprofile.response.lastname)
-    }, [])
+    })
   return (
     <>
             <div className='bg-cyan-800 py-3 flex justify-between pe-3'>

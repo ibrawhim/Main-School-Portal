@@ -1,46 +1,56 @@
-import React, { useEffect, useState } from 'react'
-import {BsSend} from 'react-icons/bs'
-import { Navigate, useNavigate } from 'react-router-dom'
+import React, { useEffect, useRef, useState } from 'react'
+import socketClient from 'socket.io-client'
 
 
 
-const Chat = ({socket}) => {
-  const navigate = useNavigate()
-    const [message, setmessage] = useState("")
-    const [allmessages, setallmessages] = useState([])
+const Chat = () => {
+    const [message, setMessage] = useState("")
+    const [allMessages, setAllMessages] = useState([])
+    let socket = useRef(0)
+    // console.log(socket.current);
+
+    let endpoint = 'https://main-school-portal.onrender.com/'
     useEffect(() => {
-      if(!localStorage.mystatus){
-        navigate('/student/signin')
-      }
-     else if(socket.current){
-       socket.current.on("broadcastMsg",(receivedMessage)=>{
-        //  console.log(receivedMessage);
-         setallmessages([...allmessages,receivedMessage])
-       })
-      }
-    }, [])
+        socket.current = socketClient(endpoint)
+        if(!localStorage.mystatus){
+                  navigate('/student/signin')
+        }else if(socket.current){
+
+            socket.current.on("broadcastMsg", (receivedMessage)=>{
+                setAllMessages([...allMessages, receivedMessage])
+                console.log(receivedMessage);
+            })
+        }
+    })
+
+    const sendMessage =()=>{
+        // console.log(message);
+        socket.current.emit("sendMsg", message)
+            // console.log(message);
+        }
     
-    const sendMessage = () => {
-      socket.current.emit("sendMsg",message)
-    }
+
   return (
     <>
     <div>
-      <div className='flex justify-center items-center'>
-        <input type="text" onChange={(e)=>setmessage(e.target.value)} value={message} className='border border-black p-3'/>
-        <button className='bg-black p-2 text-white my-1' onClick={sendMessage}><BsSend/></button>
-      </div>
-        <div>
-          {allmessages.map((msg,index)=>(
-            <div key={index}>
-              {index}
-              {msg}
+    <div className='bg-danger'>
+                {
+                    allMessages.map((msg, index)=>(
+                        <div key={index}>
+                        {msg}
+                        </div>
+                        ))
+                    }
             </div>
-          ))}
-        </div>
+            <input type="text" onChange={(e)=> setMessage(e.target.value)} />
+            <button onClick={sendMessage}>Send Message</button>
+      
     </div>
+        
+
     </>
   )
 }
 
 export default Chat
+
