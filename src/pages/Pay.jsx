@@ -23,13 +23,20 @@ const Pay = () => {
     document.querySelector('.content').style.display = 'none';
   }
 
-  
+  let date = new Date()
   const [email, setemail] = useState('')
   const [amount, setamount] = useState('')
   const [name, setname] = useState('')
   // const [phone, setphone] = useState('')
+ 
 
-    const payWithPaystack = (e) => {
+  
+  
+  const payWithPaystack = (e) => {
+    let answer = []
+    if(localStorage.reference) {
+    answer = JSON.parse(localStorage.getItem("reference"))
+  }
     e.preventDefault()
     const paystack = new PaystackPop()
       paystack.newTransaction({
@@ -42,6 +49,16 @@ const Pay = () => {
           alert(message)
           setname('')
           setemail('')
+          const number = transaction.reference
+          answer = {
+            email,
+            name,
+            number,
+            amount: 50000,
+            myDate: date.toLocaleDateString(),
+            myTime: date.toLocaleTimeString()
+         }
+          localStorage.setItem('reference',JSON.stringify(answer))
         },
         onCancel(){
           alert('transaction canceled')
