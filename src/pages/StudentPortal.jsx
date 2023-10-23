@@ -43,7 +43,7 @@ const [newlastname, setNewlastname] = useState("")
 
     
     let socket = useRef()
-    console.log(socket.current);
+    // console.log(socket.current);
     let endpoint = 'https://main-school-portal.onrender.com'
     useEffect(() => {
       socket.current = socketClient(endpoint)

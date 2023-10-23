@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import nav from '../Images/nav.png'
-import { useFlutterwave, closePaymentModal } from 'flutterwave-react-v3';
+import PaystackPop from '@paystack/inline-js'
 import { Navigate, useNavigate } from 'react-router-dom';
 
 
@@ -24,12 +24,30 @@ const Pay = () => {
   }
 
   
-  const [myemail, setmyemail] = useState('')
-  const [myamount, setmyamount] = useState('')
-  const [myfirstname, setmyfirstname] = useState('')
-  const [myphone, setmyphone] = useState('')
+  const [email, setemail] = useState('')
+  const [amount, setamount] = useState('')
+  const [name, setname] = useState('')
+  // const [phone, setphone] = useState('')
 
-
+    const payWithPaystack = (e) => {
+    e.preventDefault()
+    const paystack = new PaystackPop()
+      paystack.newTransaction({
+        key: 'pk_test_f625ae093e8d765eca5eb1d74e74de3476c5bc66',
+        amount: 5000000,
+        email,
+        name,
+        onSuccess(transaction){
+          let message =   `payment complete! Reference ${transaction.reference}`
+          alert(message)
+          setname('')
+          setemail('')
+        },
+        onCancel(){
+          alert('transaction canceled')
+        }
+      })
+    }
 
   return (
     <>
@@ -38,23 +56,23 @@ const Pay = () => {
             <div className='shadow rounded-xl lg:w-1/2 md:w-1/2 sm:w-2/3   mb-72 mx-auto p-2'>
               <form action="" id='paymentForm'>
             <div className='my-2'>
-                  <label htmlFor="firstname">Firstname:</label>
-                  <input type="text" className='text-cyan border-cyan-800 border-2 w-full rounded border' onChange={(e)=>setmyfirstname(e.target.value)} value={myfirstname}/>
+                  <label htmlFor="firstname">Name:</label>
+                  <input type="text" className='text-cyan border-cyan-800 border-2 w-full rounded border' onChange={(e)=>setname(e.target.value)} value={name}/>
                 </div>
-                <div className='my-2'>
+                {/* <div className='my-2'>
                   <label htmlFor="phone">Phone:</label>
-                  <input type="text"  className=' text-cyan border-cyan-800 border-2 w-full rounded border' onChange={(e)=>setmyphone(e.target.value)} value={myphone}/>
-                </div>
+                  <input type="text"  className=' text-cyan border-cyan-800 border-2 w-full rounded border' onChange={(e)=>setphone(e.target.value)} value={phone}/>
+                </div> */}
                 <div className='my-2'>
                   <label htmlFor="email">Email:</label>
-                  <input type="text"  className=' text-cyan border-cyan-800 border-2 w-full rounded border' onChange={(e)=>setmyemail(e.target.value)} value={myemail}/>
+                  <input type="text"  className=' text-cyan border-cyan-800 border-2 w-full rounded border' onChange={(e)=>setemail(e.target.value)} value={email}/>
                 </div>
                 <div className='my-2'>
                   <label htmlFor="amount">Amount:</label>
-                  <input type="text"  className=' text-cyan border-cyan-800 border-2 w-full rounded border' onChange={(e)=>setmyamount(e.target.value)} value={myamount}/>
+                  <input type="text"  className=' text-cyan border-cyan-800 border-2 w-full rounded border' disabled placeholder='50,000' onChange={(e)=>setamount(e.target.value)} value={amount}/>
                 </div>
                 
-                <button className='bg-cyan-800 w-full rounded text-white my-2 py-2'>Pay</button>
+                <button className='bg-cyan-800 w-full rounded text-white my-2 py-2' onClick={payWithPaystack}>Pay</button>
                 </form>
             </div>
         </main>

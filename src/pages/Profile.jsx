@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { Navigate } from 'react-router-dom'
+import { Navigate, useNavigate } from 'react-router-dom'
 
 
 
@@ -14,12 +14,16 @@ const Profile = () => {
   const [image, setimage] = useState('')
   const [newImage, setnewImage] = useState('')
 
+  let navigate = useNavigate()
+
   // let endpoint = 'http://localhost:4223/student/image'
   let endpoint = 'https://main-school-portal.onrender.com/student/image/'
+  let storedImage = JSON.parse(localStorage.getItem('myimage'))
   useEffect(() => {
     if(!localStorage.mystatus){
       navigate('/student/signin')
     }else {
+      setnewImage(storedImage)
    let myProfile = JSON.parse(localStorage.getItem('myprofile'))
    console.log(myProfile.response.firstname);
    setfirstname(myProfile.response.firstname)
@@ -55,14 +59,14 @@ const Profile = () => {
           <div className='flex justify-between'>
             <h1 className='font-bold'>PROFILES</h1>
             <div className='h-full'>
-             <img src={newImage} width={100} className='h-full rounded-full' alt="" />
+             <img src={newImage} width={70} className='h-full rounded-full' alt="" />
             </div>
           </div>
-            <div className='flex justify-between'>
+            <div>
               {/* <input type="hidden" /> */} <p></p>
-              <div>
-              <input type="file" onChange={(e)=>changeFile(e)}/>
-              <button onClick={uploadFile}>upload</button>
+              <div className='flex justify-between w-1/2'>
+              <input type="file" className='border border-2 border-black' onChange={(e)=>changeFile(e)}/>
+              <button className='bg-black text-white px-1 rounded' onClick={uploadFile}>upload</button>
             </div>
             </div>
             <div className='border p-0 m-0 grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 mb-40 gap-10'>
