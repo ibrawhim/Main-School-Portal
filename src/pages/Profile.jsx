@@ -14,7 +14,8 @@ const Profile = () => {
   const [image, setimage] = useState('')
   const [newImage, setnewImage] = useState('')
 
-  let endpoint = 'https://school-portal-back.onrender.com/student/image'
+  // let endpoint = 'http://localhost:4223/student/image'
+  let endpoint = 'https://main-school-portal.onrender.com/student/image/'
   useEffect(() => {
     if(!localStorage.mystatus){
       navigate('/student/signin')
