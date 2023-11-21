@@ -13,8 +13,8 @@ const PayHistory = () => {
   }, [])
   return (
     <>
-      <div className='border content'>
-          <table className='border w-full text-center'>
+      <div className='border w-[100px] content'>
+          <table className=' w-full text-center'>
             <tr className='border'>
               <td className='border border-black font-bold'>Reference</td>
               <td className='border border-black font-bold'>Amount</td>
